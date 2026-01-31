@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  web:
+    image: personal-portfolio:latest
+    ports:
+      - "8080:80"
+    restart: unless-stopped
