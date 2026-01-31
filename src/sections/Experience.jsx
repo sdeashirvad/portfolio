@@ -216,6 +216,7 @@ export const Experience = () => {
       {selectedExp && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
           <div className="glass rounded-3xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto border border-primary/30 animate-fade-in relative">
+
             <button
               onClick={() => setSelectedExp(null)}
               className="absolute top-6 right-6 p-2 rounded-full hover:bg-primary/10 transition-colors"
@@ -226,19 +227,28 @@ export const Experience = () => {
             <span className="text-sm text-primary font-medium">
               {selectedExp.period}
             </span>
-            <h3 className="text-3xl font-bold mt-2 mb-1">{selectedExp.role}</h3>
+
+            <h3 className="text-3xl font-bold mt-2 mb-1">
+              {selectedExp.role}
+            </h3>
+
             <p className="text-white/70 text-lg mb-6 tracking-wide">
               {selectedExp.company}
             </p>
 
-            <ul className="space-y-3 text-white/80 text-base list-disc list-outside pl-5 mb-8">
+            {/* Experience Bullets */}
+            <ul className="space-y-3 text-white/80 text-base list-disc list-outside pl-5 marker:text-white/40 mb-8">
               {selectedExp.bullets.map((bullet, i) => (
-                <li key={i} className="leading-relaxed">
+                <li
+                  key={i}
+                  className="leading-snug tracking-[0.01em]"
+                >
                   {highlightText(bullet, HIGHLIGHT_KEYWORDS)}
                 </li>
               ))}
             </ul>
 
+            {/* Technologies */}
             <div className="border-t border-border pt-6">
               <h4 className="text-sm font-semibold mb-4 uppercase tracking-wider">
                 Technologies & Skills
@@ -257,6 +267,7 @@ export const Experience = () => {
           </div>
         </div>
       )}
+
     </section>
   );
 };
