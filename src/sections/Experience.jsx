@@ -165,7 +165,12 @@ export const Experience = () => {
                       : "md:col-start-2 md:pl-16"
                   }`}
                 >
-                  <div className="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500">
+                  <div
+                    onClick={() => setSelectedExp(exp)}
+                    role="button"
+                    tabIndex={0}
+                    className="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 hover:cursor-pointer transition-all duration-500 group"
+                  >
                     <span className="text-sm text-primary font-medium">
                       {exp.period}
                     </span>
@@ -183,12 +188,25 @@ export const Experience = () => {
                     {exp.bullets.length > 2 && (
                       <button
                         onClick={() => setSelectedExp(exp)}
-                        className="mt-3 inline-flex items-center gap-2 text-xs font-medium text-primary hover:text-primary/80 transition-colors group"
+                        className="relative mt-4 inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-primary border border-primary/40 rounded-full overflow-hidden group"
                       >
-                        Read More
-                        <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        {/* Fill sweep layer */}
+                        <span className="pointer-events-none absolute inset-0 overflow-hidden">
+                          <span
+                            className="absolute inset-0 bg-primary/15 animate-sweep-ltr"
+                          />
+                        </span>
+
+                        {/* Content */}
+                        <span className="relative z-10 group-hover:text-white transition-colors">
+                          Read More
+                        </span>
+
+                        <ChevronRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </button>
                     )}
+
+
 
                     <div
                       className={`flex flex-wrap gap-2 mt-4 ${

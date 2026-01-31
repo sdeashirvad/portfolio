@@ -182,3 +182,32 @@
       0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
   }
 }
+@keyframes sweep-ltr-fill {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  70% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@keyframes sweep-reset {
+  0%, 85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-sweep-ltr {
+  animation: sweep-ltr-fill 2.4s ease-out infinite,
+             sweep-reset 2.4s ease-out infinite;
+}
+
