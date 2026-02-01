@@ -8,32 +8,16 @@ const testimonials = [
     author: "Ajay Gahalot",
     role: "Principle Engineer",
     avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+      "/ajay-gahalot.jpg?w=100&h=100&fit=crop",
   },
   {
     quote:
-      "Working with Ashirvad on our React migration was seamless. His understanding of modern frontend architecture and optimization techniques significantly improved our application performance.",
+      "I collaborated with Ashirvad on migrating a large GWT application to React + Spring Boot. He combined strong technical skills in Spark, Snowflake, and Java with clear communication and ownership, making him a dependable teammate who consistently delivers.",
     author: "Nikhil Satyam",
     role: "Software Engineer",
     avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
-  },
-  {
-    quote:
-      "Ashirvad has a strong grasp of both frontend and backend technologies. His ability to build complete features from API design to UI implementation makes him a valuable team member.",
-    author: "Amit Verma",
-    role: "Tech Lead",
-    avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
-  },
-  {
-    quote:
-      "Professional, reliable, and committed to writing quality code. Ashirvad takes ownership of his work and consistently delivers on deadlines with minimal supervision required.",
-    author: "Neha Patel",
-    role: "Team Lead",
-    avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
-  },
+      "/nikhil-satyam.jpg?w=100&h=100&fit=crop",
+  }
 ];
 
 export const Testimonials = () => {
