@@ -104,14 +104,14 @@ export const Contact = () => {
             Connect With Me
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Let's work
+            Let's engineer
             <span className="font-serif italic font-normal text-white">
               {" "}
               together.
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            Have an interesting project or opportunity? I'd love to hear from you.
+            Have an interesting project or engineering idea? I'd love to hear from you.
             Reach out via email, phone, or the form below.
           </p>
         </div>
@@ -244,12 +244,11 @@ export const Contact = () => {
             <div className="glass rounded-3xl p-8 border border-primary/30">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                <span className="font-medium">Currently Available</span>
+                <span className="font-medium">Open to Collaboration</span>
               </div>
               <p className="text-muted-foreground text-sm">
-                I'm currently open to new opportunities and exciting projects.
-                Whether you need a full-time engineer or a freelance consultant,
-                let's talk!
+                I'm always excited to learn about new technologies and engineering practices.
+                Open to discussing interesting projects and potential collaborations.
               </p>
             </div>
           </div>

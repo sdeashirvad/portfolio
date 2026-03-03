@@ -5,7 +5,7 @@ const experiences = [
   {
     period: "Jun 2025 — Present",
     role: "Software Engineer – Full Stack & Data Engineering",
-    company: "Wissen Technology (Client: Morgan Stanley)",
+    company: "Wissen Technology",
     bullets: [
       "Engineered an end-to-end financial audit automation platform, reducing reporting turnaround time by 40% for risk and P&L workflows",
       "Built scalable Angular frontends and Spring Boot microservices integrated with Snowflake to support high-volume financial data processing",
@@ -27,8 +27,8 @@ const experiences = [
   },
   {
     period: "Feb 2024 — May 2025",
-    role: "SDE Intern / Data Engineering Consultant",
-    company: "Wissen Technology (Client: Morgan Stanley)",
+    role: "SDE Intern",
+    company: "Wissen Technology",
     bullets: [
       "Automated 200+ hours per week of manual EUC effort by designing and implementing Spark-based ETL pipelines for ICAAP and regulatory reporting",
       "Developed secure and scalable REST APIs using Spring Boot, integrating frontend applications with Snowflake and Teradata",
