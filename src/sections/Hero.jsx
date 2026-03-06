@@ -120,12 +120,12 @@ export const Hero = () => {
                   Let’s Talk <ArrowRight className="w-5 h-5" />
                 </Button>
               </a>
-{/*               <button onClick={handleDownloadCV} className="inline-flex"> */}
-{/*                 <AnimatedBorderButton> */}
-{/*                   <Download className="w-5 h-5" /> */}
-{/*                   Download CV */}
-{/*                 </AnimatedBorderButton> */}
-{/*               </button> */}
+              <button onClick={handleDownloadCV} className="inline-flex">
+                <AnimatedBorderButton>
+                  <Download className="w-5 h-5" />
+                  Download CV
+                </AnimatedBorderButton>
+              </button>
 
             </div>
 

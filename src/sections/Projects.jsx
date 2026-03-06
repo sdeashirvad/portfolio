@@ -28,9 +28,10 @@ const projects = [
   {
     title: "ChatLoom — Multi-Channel GenAI Interaction Platform",
     description:
-      "Centralized AI orchestration backend supporting dynamic system prompt templates, multi-API key rotation, persona-driven responses, and Telegram/Web interfaces. Built as a reusable AI service layer for future AI-Ops extensions.",
-    images: ["/projects/chatloom-1.png", "/projects/chatloom-2.png"],
+      "Centralized AI orchestration backend supporting Multi-Tenant RAG Architecture , Configurable Grounding Modes , dynamic system prompt templates, multi-API key rotation, persona-driven responses, and Telegram/Web interfaces. Built as a reusable AI service layer for future AI-Ops extensions.",
+    images: ["/projects/chatloom-1.png", "/projects/chatloom-2.png", "/projects/chatloom-3.png"],
     tags: [
+      "RAG",
       "Spring Boot",
       "Gemini API",
       "Prompt Engineering",
