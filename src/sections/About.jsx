@@ -1,28 +1,28 @@
-import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
+import { Server, Workflow, BrainCircuit, Blocks} from "lucide-react";
 
 const highlights = [
   {
-    icon: Code2,
-    title: "Full Stack Development",
+    icon: Server,
+    title: "Backend Architecture",
     description:
-      "Building scalable systems with SpringBoot, GoLang, Flask, FastAPI backends and React/Angular frontends.",
+      "Building resilient, highly scalable microservices and distributed systems utilizing robust frameworks like Spring Boot.",
   },
   {
-    icon: Rocket,
-    title: "Data Processing & Analysis",
+    icon: Workflow,
+    title: "Data Engineering & Pipelines",
     description:
-      "Designing ETL pipelines, optimizing queries, and transforming data into actionable insights.",
+      "Designing fault-tolerant ETL pipelines, optimizing complex database queries, and managing distributed data processing engines.",
   },
   {
-    icon: Users,
-    title: "AI Integration",
-    description: "Seamlessly integrating machine learning models and AI capabilities into production systems.",
+    icon: BrainCircuit,
+    title: "Agentic AI Workflows",
+    description: "Seamlessly integrating intelligent, autonomous agents and LLM capabilities into production systems to automate complex enterprise tasks.",
   },
   {
-    icon: Lightbulb,
+    icon: Blocks,
     title: "System Design",
     description:
-      "Architecting robust, scalable systems that handle complex data workflows efficiently.",
+      "Architecting high-availability systems with a strict focus on idempotency, high-scale caching, and resilient data flows.",
   },
 ];
 
@@ -40,36 +40,35 @@ export const About = () => {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
-              Full Stack Developer
+              Enterprise Systems Engineer
               <span className="font-serif italic font-normal text-white">
                 {" "}
-                with data expertise.
+                with data & AI expertise.
               </span>
             </h2>
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I'm a full stack developer with 2+ years of experience building intelligent,
-                data-driven applications. My expertise spans the entire technology stack —
-                from robust backends using SpringBoot, GoLang, Flask, and FastAPI, to responsive
-                frontends with React and Angular.
+                With 2+ years of experience building production-grade enterprise systems,
+                my expertise lies in heavy backend architecture and robust data engineering.
+                I focus on developing resilient, distributed services and moving beyond basic
+                API wrappers to solve complex, high-scale engineering challenges.
               </p>
               <p>
-                My core speciality is data processing, analysis, and AI integration. I design systems
-                that transform raw data into actionable insights, and seamlessly integrate machine learning
-                and AI capabilities into production applications. I focus on building scalable architectures
-                that handle complex data workflows efficiently.
+                My core specialty sits at the intersection of high-volume data processing and autonomous systems.
+                I architect robust ETL pipelines, optimize data streams, and integrate Agentic
+                AI to automate complex workflows and drive intelligent decision-making at scale.
               </p>
               <p>
-                I combine technical excellence with a deep understanding of data structures and algorithms.
-                Whether it's optimizing database queries, building ETL pipelines, or integrating AI models,
-                I deliver solutions that are performant, maintainable, and production-ready.
+                By combining a rigorous foundation in data structures and algorithms with modern system design principles,
+                I architect solutions that are not just functional, but highly performant, maintainable,
+                and built to withstand enterprise-level loads.
               </p>
             </div>
 
             <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
               <p className="text-lg font-medium italic text-foreground">
-                "I build data-driven systems where every line of code serves a purpose - turning complex information into insights that drive better decisions and measurable impact."
+                "Great engineering should feel invisible. I build heavy-lifting systems behind the scenes so that complex data and intelligent workflows can just... work."
               </p>
             </div>
           </div>

@@ -111,8 +111,8 @@ export const Contact = () => {
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            Have an interesting project or engineering idea? I'd love to hear from you.
-            Reach out via email, phone, or the form below.
+            Have an interesting engineering challenge? Whether you're scaling a complex backend,
+            building out data pipelines, or just want to talk system architecture, I'd love to hear from you. Drop me a message below.
           </p>
         </div>
 
@@ -247,8 +247,8 @@ export const Contact = () => {
                 <span className="font-medium">Open to Collaboration</span>
               </div>
               <p className="text-muted-foreground text-sm">
-                I'm always excited to learn about new technologies and engineering practices.
-                Open to discussing interesting projects and potential collaborations.
+                I am currently open to high-impact engineering opportunities. Whether it's taking ownership of distributed systems in an enterprise environment
+                or laying the architectural foundation for a fast-growing startup, I am always ready to discuss how I can drive your engineering goals forward.
               </p>
             </div>
           </div>

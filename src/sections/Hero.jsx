@@ -91,7 +91,7 @@ export const Hero = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Full Stack Developer • Data & AI Specialist
+                Backend & Data Engineer • Agentic AI Workflows
               </span>
             </div>
 
@@ -107,9 +107,8 @@ export const Hero = () => {
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Ashirvad - building production-grade systems focused on reliability,
-                performance, and clarity — with strong foundations in data engineering,
-                automation, and intelligent workflows.
+                Hi, I'm Ashirvad. I architect production-grade distributed systems optimized for
+                reliability and scale — bridging heavy data engineering with agentic AI and automated workflows.
               </p>
             </div>
 

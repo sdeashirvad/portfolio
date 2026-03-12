@@ -4,15 +4,31 @@ import { useState } from "react";
 const testimonials = [
   {
     quote:
-      "Ashirvad is an excellent full stack developer with strong problem-solving skills. He delivers clean, well-structured code and communicates effectively throughout the development process.",
+      "Ashirvad is an excellent engineer with sharp problem-solving skills and a strong grasp of backend architecture. He consistently delivers clean, well-structured code and drives effective technical communication across the team, taking high ownership throughout the entire development lifecycle.",
     author: "Ajay Gahalot",
-    role: "Principle Engineer",
+    role: "Principal Engineer",
     avatar:
       "/ajay-gahalot.jpg?w=100&h=100&fit=crop",
   },
   {
     quote:
-      "I collaborated with Ashirvad on migrating a large GWT application to React + Spring Boot. He combined strong technical skills in Spark, Snowflake, and Java with clear communication and ownership, making him a dependable teammate who consistently delivers.",
+      "As a mentor, Ashirvad has a remarkable ability to break down complex concepts into practical solutions. He guided me through distributed system design, always ensuring I understood the 'why' behind architectural decisions. Working with him significantly elevated my understanding of modern backend architectures.",
+    author: "Aakshi Gulati",
+    role: "Software Engineer",
+    avatar:
+      "/aakshi.jpg?w=100&h=100&fit=crop",
+  },
+  {
+    quote:
+      "Ashirvad is an outstanding backend engineer and easily the best mentor I've worked with. Our architecture whiteboard sessions highlighted his deep knowledge of Spring Boot and microservices. Beyond writing great code, he knows exactly how to elevate junior developers through complex enterprise deployments.",
+    author: "Abir Saha",
+    role: "Software Engineer",
+    avatar:
+      "/abir.jpg?w=100&h=100&fit=crop",
+  },
+  {
+    quote:
+      "I collaborated with Ashirvad on a large-scale application migration to Spring Boot and React. He combines deep technical expertise in Java, Spark, and Snowflake with clear communication and a high sense of ownership. He is an incredibly dependable engineer who consistently delivers.",
     author: "Nikhil Satyam",
     role: "Software Engineer",
     avatar:

@@ -4,22 +4,24 @@ import { useState } from "react";
 const experiences = [
   {
     period: "Jun 2025 — Present",
-    role: "Software Engineer – Full Stack & Data Engineering",
+    role: "Software Engineer — Backend & Data Engineering",
     company: "Wissen Technology (Client: Morgan Stanley)",
     bullets: [
       "Engineered an end-to-end financial audit automation platform, reducing reporting turnaround time by 40% for risk and P&L workflows",
-      "Built scalable Angular frontends and Spring Boot microservices integrated with Snowflake to support high-volume financial data processing",
+      "Architected high-throughput Spring Boot microservices and Snowflake data workflows, while also building the Angular frontends required for seamless, end-to-end feature delivery.",
       "Implemented AI-driven anomaly detection to automate P&L insights, cutting manual analysis effort by 60% for risk managers",
-      "Led a 3-member initiative to deploy Airflow Celery-based orchestration, improving pipeline reliability, failover recovery, and execution visibility",
+      "Trusted to lead a 3-person team in deploying a new Airflow orchestration system, taking ownership of the project to successfully improve pipeline reliability and failover.",
       "Collaborated closely with controllers and risk stakeholders to translate regulatory requirements into production-ready systems",
     ],
     technologies: [
-      "Angular",
+      "Distributed Systems",
+      "Agentic AI",
       "Spring Boot",
       "Apache Airflow",
+      "Angular",
       "Snowflake",
       "AI/Anomaly Detection",
-      "Microservices",
+      "React",
       "ETL Pipelines",
       "Financial Systems",
     ],
@@ -134,8 +136,8 @@ export const Experience = () => {
           </h2>
 
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            From junior developer to full stack engineer, I've built a solid foundation
-            in modern web development with a focus on production-ready applications.
+            My journey began in full-stack web development, but I quickly gravitated toward the heavy lifting:
+            engineering the distributed backend systems, data pipelines, and intelligent workflows that make platforms scale.
           </p>
         </div>
 
