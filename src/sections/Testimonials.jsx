@@ -18,6 +18,14 @@ const testimonials = [
     avatar:
       "/aakshi.jpg?w=100&h=100&fit=crop",
   },
+     {
+       quote:
+         "I collaborated with Ashirvad on a large-scale application migration to Spring Boot and React. He combines deep technical expertise in Java, Spark, and Snowflake with clear communication and a high sense of ownership. He is an incredibly dependable engineer who consistently delivers.",
+       author: "Nikhil Satyam",
+       role: "Software Engineer",
+       avatar:
+         "/nikhil-satyam.jpg?w=100&h=100&fit=crop",
+     },
   {
     quote:
       "Ashirvad is an outstanding backend engineer and easily the best mentor I've worked with. Our architecture whiteboard sessions highlighted his deep knowledge of Spring Boot and microservices. Beyond writing great code, he knows exactly how to elevate junior developers through complex enterprise deployments.",
@@ -25,14 +33,6 @@ const testimonials = [
     role: "Software Engineer",
     avatar:
       "/abir.jpg?w=100&h=100&fit=crop",
-  },
-  {
-    quote:
-      "I collaborated with Ashirvad on a large-scale application migration to Spring Boot and React. He combines deep technical expertise in Java, Spark, and Snowflake with clear communication and a high sense of ownership. He is an incredibly dependable engineer who consistently delivers.",
-    author: "Nikhil Satyam",
-    role: "Software Engineer",
-    avatar:
-      "/nikhil-satyam.jpg?w=100&h=100&fit=crop",
   }
 ];
 
