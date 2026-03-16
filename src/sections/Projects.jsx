@@ -14,7 +14,7 @@ const projects = [
     ],
     tags: ["React", "Spring Boot", "PostgreSQL", "Redis", "GenAI", "Docker"],
     link: "https://pnlgaurd.ashirvad.work",
-    github: "https://github.com/sdeashirvad/pnlguard-dashboard",
+    github: "https://github.com/sdeashirvad/pnlgaurd",
   },
   {
     title: "AirflowSentry AI — ETL Failure Diagnosis Console",
@@ -23,7 +23,7 @@ const projects = [
     images: ["/projects/sentryAi-1.png", "/projects/sentryAi-2.png", "/projects/sentryAi-3.png"],
     tags: ["React", "Spring Boot", "AI Ops", "Airflow", "Redis", "Docker"],
     link: "https://sentryai.ashirvad.work",
-    github: "https://github.com/sdeashirvad/airflowsentry-console",
+    github: "https://github.com/sdeashirvad/airflow-sentry-ai",
   },
   {
     title: "ChatLoom — Multi-Channel GenAI Interaction Platform",
@@ -39,7 +39,7 @@ const projects = [
       "REST APIs",
     ],
     link: "https://chatloom.ashirvad.work",
-    github: "https://github.com/sdeashirvad/chatloom",
+    github: "https://github.com/sdeashirvad/chat-loom",
   },
   {
     title:
