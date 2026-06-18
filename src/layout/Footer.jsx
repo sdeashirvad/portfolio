@@ -3,6 +3,7 @@ import {
   Linkedin,
   Twitter,
   Newspaper,
+  Code2,
 } from "lucide-react";
 
 const socialLinks = [
@@ -26,11 +27,17 @@ const socialLinks = [
     href: "https://sdeashirvad.medium.com/",
     label: "Medium",
   },
+  {
+    icon: Code2,
+    href: "https://leetcode.com/u/ashirvadpandey1/",
+    label: "LeetCode",
+  },
 ];
 
 const footerLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
+  { href: "#writing", label: "Writing" },
   { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ];

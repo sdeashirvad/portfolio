@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
+  { href: "#writing", label: "Writing" },
   { href: "#experience", label: "Experience" },
   { href: "#testimonials", label: "Testimonials" },
 ];
@@ -81,9 +82,9 @@ export const Navbar = () => {
               </a>
             ))}
 
-            <Button onClick={() => setIsMobileMenuOpen(false)}>
-              Contact Me
-            </Button>
+            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+              <Button className="w-full">Contact Me</Button>
+            </a>
           </div>
         </div>
       )}

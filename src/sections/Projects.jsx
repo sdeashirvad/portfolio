@@ -1,209 +1,13 @@
-import { useState, useEffect } from "react";
-import { ArrowUpRight, Github } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
-
-const projects = [
-  {
-    title: "PnLGuard AI — Financial Anomaly Monitoring Platform",
-    description:
-      "Full-stack anomaly detection platform that ingests P&L data, performs rule-based break detection, and generates AI-driven risk explanations with a human-in-the-loop review workflow (Accept/Reject + audit trail). Designed for low-latency backend processing with Redis-backed caching and replay safety.",
-    images: [
-      "/projects/pnlGaurd-1.png",
-      "/projects/pnlGaurd-2.png",
-      "/projects/pnlGaurd-3.png",
-    ],
-    tags: ["React", "Spring Boot", "PostgreSQL", "Redis", "GenAI", "Docker"],
-    link: "https://pnlgaurd.ashirvad.work",
-    github: "https://github.com/sdeashirvad/pnlgaurd",
-  },
-  {
-    title: "AirflowSentry AI — ETL Failure Diagnosis Console",
-    description:
-      "AI-powered ETL Ops console that analyzes Airflow pipeline failures, performs structured root-cause classification, and recommends retry-safe remediation steps. Includes incident templates, exportable summaries, and mock Jira/Slack integrations to simulate real SRE workflows.",
-    images: [
-      "/projects/sentryAi-1.png",
-      "/projects/sentryAi-2.png",
-      "/projects/sentryAi-3.png",
-    ],
-    tags: [
-      "React",
-      "Spring Boot",
-      "AI Ops",
-      "Airflow",
-      "Redis",
-      "Docker",
-    ],
-    link: "https://sentryai.ashirvad.work",
-    github: "https://github.com/sdeashirvad/airflow-sentry-ai",
-  },
-  {
-    title: "ChatLoom — Multi-Channel GenAI Interaction Platform",
-    description:
-      "Centralized AI orchestration backend supporting multi-tenant RAG architecture, configurable grounding modes, dynamic system prompt templates, multi-API key rotation, persona-driven responses, and Telegram/Web interfaces. Built as a reusable AI service layer for future AI-Ops extensions.",
-    images: [
-      "/projects/chatloom-1.png",
-      "/projects/chatloom-2.png",
-      "/projects/chatloom-3.png",
-    ],
-    tags: [
-      "RAG",
-      "Spring Boot",
-      "Gemini API",
-      "Prompt Engineering",
-      "Docker",
-      "REST APIs",
-    ],
-    link: "https://chatloom.ashirvad.work",
-    github: "https://github.com/sdeashirvad/chat-loom",
-  },
-  {
-    title:
-      "Transaction Guard — Idempotency & Exactly-Once Execution Layer",
-    description:
-      "Redis-backed idempotency middleware designed to guarantee atomic state transitions and exactly-once execution under retries and concurrent duplicate requests. Implements distributed locking via Lua scripts, configurable TTL, and fail-open/fail-closed operational modes.",
-    images: ["/projects/transactionGaurd-1.png"],
-    tags: [
-      "Spring Boot",
-      "Redis",
-      "Lua",
-      "Distributed Systems",
-      "Concurrency Control",
-      "Docker",
-    ],
-    link: "#",
-    github: "#",
-    status: "in-progress",
-  },
-];
-
-const ProjectCard = ({ project, idx }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    if (isHovered || project.images.length <= 1) return;
-
-    const timer = setInterval(() => {
-      setActiveIndex(
-        (prevIndex) => (prevIndex + 1) % project.images.length
-      );
-    }, 4000);
-
-    return () => clearInterval(timer);
-  }, [isHovered, project.images.length]);
-
-  return (
-    <article
-      className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
-      style={{ animationDelay: `${(idx + 1) * 100}ms` }}
-      aria-labelledby={`project-title-${idx}`}
-    >
-      <div
-        className="relative overflow-hidden aspect-video"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {project.status === "in-progress" && (
-          <div className="absolute top-3 left-3 z-10 bg-amber-500 text-black text-xs font-bold px-2.5 py-1 rounded-full">
-            In Development
-          </div>
-        )}
-
-        {project.images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`${project.title} platform screenshot ${index + 1}`}
-            className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
-              index === activeIndex ? "opacity-100" : "opacity-0"
-            }`}
-            loading="lazy"
-          />
-        ))}
-
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
-
-        <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-
-          {project.link !== "#" && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Visit ${project.title}`}
-              className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-            >
-              <ArrowUpRight className="w-5 h-5" />
-            </a>
-          )}
-
-          {project.github !== "#" && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`View ${project.title} GitHub repository`}
-              className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-            >
-              <Github className="w-5 h-5" />
-            </a>
-          )}
-
-        </div>
-
-        {project.images.length > 1 && (
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
-            {project.images.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                aria-label={`View screenshot ${index + 1} of ${project.title}`}
-                className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                  index === activeIndex ? "bg-white" : "bg-white/50"
-                } hover:bg-white`}
-              />
-            ))}
-          </div>
-        )}
-      </div>
-
-      <div className="p-6 space-y-4">
-
-        <div className="flex items-start justify-between gap-4">
-          <h3
-            id={`project-title-${idx}`}
-            className="text-xl font-semibold group-hover:text-primary transition-colors"
-          >
-            {project.title}
-          </h3>
-
-          <ArrowUpRight className="w-5 h-5 shrink-0 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
-        </div>
-
-        <p className="text-muted-foreground text-sm leading-relaxed">
-          {project.description}
-        </p>
-
-        <div
-          className="flex flex-wrap gap-2"
-          aria-label={`${project.title} technologies`}
-        >
-          {project.tags.map((tag, tagIdx) => (
-            <span
-              key={tagIdx}
-              className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-      </div>
-    </article>
-  );
-};
+import { AllProjectsModal } from "@/components/AllProjectsModal";
+import { ProjectCard } from "@/components/ProjectCard";
+import { featuredProjects } from "@/data/projects";
 
 export const Projects = () => {
+  const [isAllProjectsOpen, setIsAllProjectsOpen] = useState(false);
+
   return (
     <section
       id="projects"
@@ -214,9 +18,7 @@ export const Projects = () => {
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-6 relative z-10">
-
         <div className="text-center mx-auto max-w-3xl mb-16">
-
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
             Featured Work
           </span>
@@ -236,27 +38,29 @@ export const Projects = () => {
             Production-ready AI-driven platforms focused on backend reliability,
             distributed systems, orchestration workflows, and scalable software infrastructure.
           </p>
-
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, idx) => (
-            <ProjectCard
-              key={project.title}
-              project={project}
-              idx={idx}
-            />
+          {featuredProjects.map((project, idx) => (
+            <ProjectCard key={project.title} project={project} idx={idx} />
           ))}
         </div>
 
         <div className="text-center mt-12 animate-fade-in animation-delay-500">
-          <AnimatedBorderButton>
+          <AnimatedBorderButton
+            onClick={() => setIsAllProjectsOpen(true)}
+            aria-label="View all projects"
+          >
             View All Projects
             <ArrowUpRight className="w-5 h-5" />
           </AnimatedBorderButton>
         </div>
-
       </div>
+
+      <AllProjectsModal
+        isOpen={isAllProjectsOpen}
+        onClose={() => setIsAllProjectsOpen(false)}
+      />
     </section>
   );
 };

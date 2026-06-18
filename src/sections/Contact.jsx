@@ -60,10 +60,6 @@ export const Contact = () => {
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      console.log("Service ID:", serviceId ? "✓ Found" : "✗ Missing");
-      console.log("Template ID:", templateId ? "✓ Found" : "✗ Missing");
-      console.log("Public Key:", publicKey ? "✓ Found" : "✗ Missing");
-
       if (!serviceId || !templateId || !publicKey) {
         throw new Error(
           "EmailJS configuration is missing. Please check your .env file has VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY variables."
@@ -149,12 +145,13 @@ export const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  type="email"
                   className="block text-sm font-medium mb-2"
                 >
                   Email
                 </label>
                 <input
+                  id="email"
+                  type="email"
                   required
                   placeholder="your@email.com"
                   value={formData.email}
@@ -253,9 +250,16 @@ export const Contact = () => {
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                 <span className="font-medium">Open to Collaboration</span>
               </div>
-              <p className="text-muted-foreground text-sm">
-                I am currently open to high-impact engineering opportunities. Whether it's taking ownership of distributed systems in an enterprise environment
-                or laying the architectural foundation for a fast-growing startup, I am always ready to discuss how I can drive your engineering goals forward.
+              <p className="text-muted-foreground text-sm space-y-2">
+                <span className="block">
+                  <strong className="text-foreground">Roles:</strong> Backend Engineer, Data Engineer, AI Platform Engineer
+                </span>
+                <span className="block">
+                  <strong className="text-foreground">Location:</strong> Bengaluru, India — open to remote & hybrid
+                </span>
+                <span className="block">
+                  <strong className="text-foreground">Timeline:</strong> Available for immediate start on high-impact opportunities
+                </span>
               </p>
             </div>
           </div>

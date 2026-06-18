@@ -7,10 +7,10 @@ const experiences = [
     role: "Software Engineer — Backend & Data Engineering",
     company: "Wissen Technology (Client: Morgan Stanley)",
     bullets: [
-      "Engineered an end-to-end financial audit automation platform, reducing reporting turnaround time by 40% for risk and P&L workflows",
-      "Architected high-throughput Spring Boot microservices and Snowflake data workflows, while also building the Angular frontends required for seamless, end-to-end feature delivery.",
-      "Implemented AI-driven anomaly detection to automate P&L insights, cutting manual analysis effort by 60% for risk managers",
       "Trusted to lead a 3-person team in deploying a new Airflow orchestration system, taking ownership of the project to successfully improve pipeline reliability and failover.",
+      "Engineered an end-to-end financial audit automation platform, reducing reporting turnaround time by 40% for risk and P&L workflows",
+      "Implemented AI-driven anomaly detection to automate P&L insights, cutting manual analysis effort by 60% for risk managers",
+      "Architected high-throughput Spring Boot microservices and Snowflake data workflows, while also building the Angular frontends required for seamless, end-to-end feature delivery.",
       "Collaborated closely with controllers and risk stakeholders to translate regulatory requirements into production-ready systems",
     ],
     technologies: [
@@ -94,6 +94,7 @@ const HIGHLIGHT_KEYWORDS = [
   "Microservices",
   "P&L",
   "ICAAP",
+  "3-person",
 ];
 
 const highlightText = (text, keywords) => {
@@ -117,6 +118,20 @@ const highlightText = (text, keywords) => {
 
 export const Experience = () => {
   const [selectedExp, setSelectedExp] = useState(null);
+
+  const getVisibleBulletCount = (exp) => {
+    if (exp.current) return 3;
+    return 2;
+  };
+
+  const openExperience = (exp) => setSelectedExp(exp);
+
+  const handleCardKeyDown = (e, exp) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openExperience(exp);
+    }
+  };
 
   return (
     <section id="experience" className="py-32 relative overflow-hidden">
@@ -168,9 +183,11 @@ export const Experience = () => {
                   }`}
                 >
                   <div
-                    onClick={() => setSelectedExp(exp)}
+                    onClick={() => openExperience(exp)}
+                    onKeyDown={(e) => handleCardKeyDown(e, exp)}
                     role="button"
                     tabIndex={0}
+                    aria-label={`View full details for ${exp.role} at ${exp.company}`}
                     className="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 hover:cursor-pointer transition-all duration-500 group"
                   >
                     <span className="text-sm text-primary font-medium">
@@ -180,16 +197,19 @@ export const Experience = () => {
                     <p className="text-muted-foreground">{exp.company}</p>
 
                     <ul className="mt-4 space-y-2 text-sm list-disc list-outside pl-5 text-muted-foreground">
-                      {exp.bullets.slice(0, 2).map((bullet, i) => (
+                      {exp.bullets.slice(0, getVisibleBulletCount(exp)).map((bullet, i) => (
                         <li key={i} className="leading-relaxed">
                           {highlightText(bullet, HIGHLIGHT_KEYWORDS)}
                         </li>
                       ))}
                     </ul>
 
-                    {exp.bullets.length > 2 && (
+                    {exp.bullets.length > getVisibleBulletCount(exp) && (
                       <button
-                        onClick={() => setSelectedExp(exp)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          openExperience(exp);
+                        }}
                         className="relative mt-4 inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-primary border border-primary/40 rounded-full overflow-hidden group"
                       >
                         {/* Fill sweep layer */}

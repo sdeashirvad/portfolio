@@ -71,6 +71,18 @@ export const About = () => {
                 "Great engineering should feel invisible. I build heavy-lifting systems behind the scenes so that complex data and intelligent workflows can just... work."
               </p>
             </div>
+
+            <div className="glass rounded-2xl p-5 border border-primary/20 animate-fade-in animation-delay-400">
+              <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">
+                System Design Snapshot — PnLGuard
+              </p>
+              <p className="text-xs font-mono text-muted-foreground leading-relaxed bg-surface rounded-lg px-4 py-3">
+                Ingest → Rule Engine → Redis Cache → GenAI Explainer → HITL Review → Audit Store
+              </p>
+              <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
+                Decoupled detection from AI explanation so rule-based breaks stay deterministic while GenAI adds risk context for human reviewers.
+              </p>
+            </div>
           </div>
 
           {/* Right Column - Hilights */}

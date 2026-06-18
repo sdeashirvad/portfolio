@@ -1,16 +1,58 @@
-# React + Vite
+# Ashirvad Kumar Pandey — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio for [ashirvad.work](https://ashirvad.work) / [sdeashirvad.com](https://sdeashirvad.com). Built with React 19, Vite, and Tailwind CSS v4. Showcases backend & data engineering work, AI platforms, and SDEAshirvad Labs products.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+cp .env.example .env   # add EmailJS keys
+npm run dev
+```
 
-## React Compiler
+Open [http://localhost:5173](http://localhost:5173).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Environment variables
 
-## Expanding the ESLint configuration
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `VITE_EMAILJS_SERVICE_ID` | Yes (contact form) | EmailJS service ID |
+| `VITE_EMAILJS_TEMPLATE_ID` | Yes | EmailJS template ID |
+| `VITE_EMAILJS_PUBLIC_KEY` | Yes | EmailJS public key |
+| `VITE_ANALYTICS_DOMAIN` | No | Plausible domain |
+| `VITE_ANALYTICS_ID` | No | GA4 measurement ID (`G-...`) |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Production build to `dist/` |
+| `npm run preview` | Preview production build |
+| `npm run lint` | ESLint |
+
+## Docker deployment
+
+```bash
+docker build -t ashirvad-portfolio .
+docker run -p 8080:80 -e PORT=80 ashirvad-portfolio
+```
+
+Or use `docker-compose.yml` / `run.ps1` / `run.sh` in the repo root.
+
+## Security notes
+
+- Never commit `.env`, `*.key`, `*.pem`, or internal spreadsheets to `public/`.
+- If an SSH private key was ever served from `public/`, rotate it on all servers immediately and redeploy without the key file.
+
+## Project structure
+
+```
+src/
+  data/          # projects.js, writing.js
+  sections/      # Hero, About, Projects, Writing, Experience, etc.
+  components/    # ProjectCard, AllProjectsModal, shared UI
+  layout/        # Navbar, Footer
+```
+
+Featured projects appear on the homepage; Bloom, Veera, and extended detail are in the **View All Projects** modal.
