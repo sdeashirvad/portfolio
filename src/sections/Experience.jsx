@@ -207,7 +207,7 @@ export const Experience = () => {
                     aria-label={`View full details for ${exp.role} at ${exp.company}`}
                     className="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 hover:cursor-pointer transition-all duration-500 group"
                   >
-                    <div className={idx % 2 === 0 ? "md:text-right" : ""}>
+                    <div>
                       <span className="text-sm text-primary font-medium">
                         {exp.period}
                       </span>
@@ -224,14 +224,13 @@ export const Experience = () => {
                     </ul>
 
                     {exp.bullets.length > VISIBLE_BULLET_COUNT && (
-                      <div className={idx % 2 === 0 ? "md:flex md:justify-end" : ""}>
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            openExperience(exp);
-                          }}
-                          className="relative mt-4 inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-primary border border-primary/40 rounded-full overflow-hidden group"
-                        >
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          openExperience(exp);
+                        }}
+                        className="relative mt-4 inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-primary border border-primary/40 rounded-full overflow-hidden group"
+                      >
                         {/* Fill sweep layer */}
                         <span className="pointer-events-none absolute inset-0 overflow-hidden">
                           <span
@@ -245,17 +244,12 @@ export const Experience = () => {
                         </span>
 
                         <ChevronRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </button>
-                      </div>
+                      </button>
                     )}
 
 
 
-                    <div
-                      className={`flex flex-wrap gap-2 mt-4 ${
-                        idx % 2 === 0 ? "md:justify-end" : ""
-                      }`}
-                    >
+                    <div className="flex flex-wrap gap-2 mt-4">
                       {exp.technologies.map((tech, techIdx) => (
                         <span
                           key={techIdx}
