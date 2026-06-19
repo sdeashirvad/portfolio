@@ -121,43 +121,65 @@ export const projects = [
     },
   },
   {
-    title: "Bloom — Personal Growth & Habit Platform",
+    title: "Bloom — Quiet Pregnancy Companion",
     description:
-      "Mobile-first habit and personal growth application from SDEAshirvad Labs. Focused on lightweight daily tracking, streak mechanics, and a calm UX designed for sustained engagement without notification fatigue.",
-    images: ["/projects/bloom-1.png"],
-    tags: ["React Native", "Mobile", "Product Design", "REST APIs"],
+      "Offline-first Android companion for week-by-week pregnancy journeys. Private journaling, gentle reflections, milestone memories, and exportable memory books — all stored locally on device with no account, tracking, or cloud sync required.",
+    images: [
+      "/projects/bloom-1.png",
+      "/projects/bloom-2.png",
+      "/projects/bloom-3.png",
+    ],
+    tags: ["React Native", "Android", "Offline-First", "Mobile", "Product Design"],
     link: "https://bloom.ashirvad.work",
-    github: "https://github.com/sdeashirvad",
+    github: null,
+    sourcePrivate: true,
+    sourceNote:
+      "Proprietary mobile product — source private ahead of Play Store release to protect user data and offline storage architecture.",
     featured: false,
     highlights: {
       metrics: [
-        "Streak-based habit tracking with minimal friction onboarding",
-        "Cross-platform mobile experience with offline-friendly design",
+        "Week-by-week guidance with mood check-ins and milestone memories",
+        "100% on-device storage — no account, tracking, or internet required",
+        "Exportable memory book PDF from the user's pregnancy journey",
       ],
       architecture: [
-        "Client-server split with REST API backend",
-        "Modular feature flags for iterative product rollout",
+        "Offline-first local storage with privacy-by-design data model",
+        "Modular feature screens: home, reflect, memories, and keepsake export",
       ],
       ownership: "Founder & lead engineer — SDEAshirvad Labs product",
     },
   },
   {
-    title: "Veera — Intelligent Assistant Product",
+    title: "Veera — Fitness Intelligence Platform",
     description:
-      "AI-assisted productivity product from SDEAshirvad Labs exploring conversational interfaces, contextual task assistance, and extensible agent workflows for everyday engineering and personal workflows.",
+      "Adaptive fitness intelligence platform that goes beyond the scale — tracking body composition, translating complex signals into daily actions, and evolving personalized plans as your body changes. Mobile app in active development; early-access waitlist live.",
     images: ["/projects/veera-1.png"],
-    tags: ["GenAI", "Mobile", "Agentic AI", "Spring Boot", "Product"],
-    link: "https://veera.ashirvad.work",
-    github: "https://github.com/sdeashirvad",
+    tags: [
+      "Mobile",
+      "Fitness Tech",
+      "Body Composition",
+      "Adaptive AI",
+      "Health",
+      "Product",
+    ],
+    link: "https://veera.sdeashirvad.com",
+    github: null,
+    sourcePrivate: true,
+    sourceNote:
+      "Proprietary mobile product — source private during pre-release; public repo would expand attack surface for health and fitness user data.",
+    status: "in-progress",
     featured: false,
+    wipNote:
+      "In Development — native mobile app in build. Join early access at veera.sdeashirvad.com.",
     highlights: {
       metrics: [
-        "Conversational task assistance with persona-driven responses",
-        "Extensible agent workflow hooks for productivity use cases",
+        "Adaptive transformation tracking that adjusts plans to real progress",
+        "Body composition insights beyond weight: fat loss, muscle gain, consistency",
+        "Daily personalized actions from complex fitness and nutrition signals",
       ],
       architecture: [
-        "GenAI backend with pluggable tool-use interfaces",
-        "Mobile client consuming centralized AI orchestration APIs",
+        "Tracking → learning → adjustment loop for transformation intelligence",
+        "Unified nutrition, workout, and composition data model for holistic guidance",
       ],
       ownership: "Founder & lead engineer — SDEAshirvad Labs product",
     },

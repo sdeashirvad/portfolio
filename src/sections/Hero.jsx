@@ -148,12 +148,14 @@ export const Hero = () => {
                   Connect on LinkedIn
                 </Button>
               </a>
-              <button onClick={handleDownloadCV} className="inline-flex">
-                <AnimatedBorderButton aria-label="Download CV">
-                  <Download className="w-5 h-5" />
-                  Download CV
-                </AnimatedBorderButton>
-              </button>
+              <AnimatedBorderButton
+                onClick={handleDownloadCV}
+                aria-label="Download CV"
+                className="inline-flex"
+              >
+                <Download className="w-5 h-5" />
+                Download CV
+              </AnimatedBorderButton>
             </div>
 
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">

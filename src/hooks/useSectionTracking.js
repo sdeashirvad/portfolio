@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { trackSectionView } from "@/lib/analytics";
+import { trackSectionView } from "@/lib/site-events";
 
 const TRACKED_SECTIONS = ["projects", "writing", "experience", "contact"];
 

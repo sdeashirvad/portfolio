@@ -114,6 +114,19 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
           </p>
         )}
 
+        {project.sourcePrivate && project.sourceNote && (
+          <p
+            className={`text-xs leading-relaxed border rounded-lg px-3 py-2 ${
+              isDetailed
+                ? "text-muted-foreground border-border/50 bg-surface/50"
+                : "text-muted-foreground/90 border-border/40 bg-surface/30"
+            }`}
+          >
+            <span className="font-medium text-foreground/80">Private repository — </span>
+            {project.sourceNote}
+          </p>
+        )}
+
         {isDetailed && project.highlights && (
           <div className="space-y-3 pt-2 border-t border-border/50">
             <p className="text-xs font-semibold uppercase tracking-wider text-primary">

@@ -2,8 +2,35 @@ import { ChevronRight, X } from "lucide-react";
 import { useState } from "react";
 
 const experiences = [
+  // SE II — reserved bullets (uncomment when timeline justifies more depth):
+  // "Shipped GenJira and Hygiene as production modules: GenJira saves 2+ hours of manual Jira setup per planning session by converting transcripts into Epics and Tasks; Hygiene automates dependency upgrades across 30+ repos, cutting remediation cycles by 60%.",
+  // "Drove cross-functional delivery on securities lifecycle workflows with business stakeholders — from requirements and Python data staging through Spring Boot services and production rollout.",
   {
-    period: "Jun 2025 — Present",
+    period: "Apr 2026 — Present",
+    role: "Software Engineer II — Backend, Data & Agentic AI",
+    company: "Wissen Technology (Client: Morgan Stanley)",
+    bullets: [
+      "Onboarded 6 engineering teams to an AI-assisted developer platform linking GitHub and Bitbucket — unifying ticket creation through QA deployment for parallel delivery, saving an estimated 120+ hours per week in manual handoffs. Powered by FastAPI, Claude, LangGraph, and LangChain.",
+      "Built a configurable AI layer on Snowflake Cortex — business users query production data in plain English, reducing ad-hoc data-team requests by 50%, while automated root-cause analysis cut incident triage time by 40%. Stack: Flask, Spring Boot, React, Snowflake.",
+      "Modernized legacy file-based issuance and retirement feeds into an Airflow ETL pipeline with full change history — 45% storage reduction, daily reporting refresh (vs. weekly batch files), and audit-ready versioned records for compliance teams.",
+    ],
+    technologies: [
+      "Agentic AI",
+      "LangGraph",
+      "LangChain",
+      "FastAPI",
+      "Spring Boot",
+      "Snowflake Cortex",
+      "Apache Airflow",
+      "React",
+      "Python",
+      "ETL / SCD",
+      "Flask",
+    ],
+    current: true,
+  },
+  {
+    period: "Jun 2025 — Mar 2026",
     role: "Software Engineer — Backend & Data Engineering",
     company: "Wissen Technology (Client: Morgan Stanley)",
     bullets: [
@@ -25,7 +52,7 @@ const experiences = [
       "ETL Pipelines",
       "Financial Systems",
     ],
-    current: true,
+    current: false,
   },
   {
     period: "Feb 2024 — May 2025",
@@ -52,33 +79,15 @@ const experiences = [
     ],
     current: false,
   },
-  {
-    period: "Aug 2021 — Jan 2024",
-    role: "Software Engineering Projects",
-    company: "Independent & Academic Work",
-    bullets: [
-      "Built end-to-end full-stack applications using React, Java, and Python, focusing on clean architecture and maintainable codebases",
-      "Implemented backend services and REST APIs, working with SQL databases and optimizing queries for performance",
-      "Strengthened problem-solving skills through hands-on practice in data structures, algorithms, and system design fundamentals",
-      "Worked with Git-based version control, collaborative workflows, and basic deployment pipelines",
-      "Explored AI integration and automation through independent projects aligned with real-world engineering problems",
-    ],
-    technologies: [
-      "React",
-      "Java",
-      "Python",
-      "JavaScript",
-      "SQL",
-      "Git",
-      "HTML",
-      "CSS",
-      "System Design Basics",
-    ],
-    current: false,
-  },
 ];
 
 const HIGHLIGHT_KEYWORDS = [
+  "6 engineering teams",
+  "120+",
+  "2+",
+  "30+",
+  "45%",
+  "50%",
   "40%",
   "60%",
   "200+",
@@ -95,6 +104,17 @@ const HIGHLIGHT_KEYWORDS = [
   "P&L",
   "ICAAP",
   "3-person",
+  "LangGraph",
+  "LangChain",
+  "FastAPI",
+  "Flask",
+  "Claude",
+  "Cortex",
+  "SCD",
+  "Agentic",
+  "GenJira",
+  "BMAD",
+  "HITL",
 ];
 
 const highlightText = (text, keywords) => {
@@ -119,10 +139,7 @@ const highlightText = (text, keywords) => {
 export const Experience = () => {
   const [selectedExp, setSelectedExp] = useState(null);
 
-  const getVisibleBulletCount = (exp) => {
-    if (exp.current) return 3;
-    return 2;
-  };
+  const VISIBLE_BULLET_COUNT = 2;
 
   const openExperience = (exp) => setSelectedExp(exp);
 
@@ -178,7 +195,7 @@ export const Experience = () => {
                 <div
                   className={`pl-8 md:pl-0 ${
                     idx % 2 === 0
-                      ? "md:pr-16 md:text-right"
+                      ? "md:pr-16"
                       : "md:col-start-2 md:pl-16"
                   }`}
                 >
@@ -190,28 +207,31 @@ export const Experience = () => {
                     aria-label={`View full details for ${exp.role} at ${exp.company}`}
                     className="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 hover:cursor-pointer transition-all duration-500 group"
                   >
-                    <span className="text-sm text-primary font-medium">
-                      {exp.period}
-                    </span>
-                    <h3 className="text-xl font-semibold mt-2">{exp.role}</h3>
-                    <p className="text-muted-foreground">{exp.company}</p>
+                    <div className={idx % 2 === 0 ? "md:text-right" : ""}>
+                      <span className="text-sm text-primary font-medium">
+                        {exp.period}
+                      </span>
+                      <h3 className="text-xl font-semibold mt-2">{exp.role}</h3>
+                      <p className="text-muted-foreground">{exp.company}</p>
+                    </div>
 
-                    <ul className="mt-4 space-y-2 text-sm list-disc list-outside pl-5 text-muted-foreground">
-                      {exp.bullets.slice(0, getVisibleBulletCount(exp)).map((bullet, i) => (
+                    <ul className="mt-4 space-y-2 text-sm list-disc list-outside pl-5 text-left text-muted-foreground">
+                      {exp.bullets.slice(0, VISIBLE_BULLET_COUNT).map((bullet, i) => (
                         <li key={i} className="leading-relaxed">
                           {highlightText(bullet, HIGHLIGHT_KEYWORDS)}
                         </li>
                       ))}
                     </ul>
 
-                    {exp.bullets.length > getVisibleBulletCount(exp) && (
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          openExperience(exp);
-                        }}
-                        className="relative mt-4 inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-primary border border-primary/40 rounded-full overflow-hidden group"
-                      >
+                    {exp.bullets.length > VISIBLE_BULLET_COUNT && (
+                      <div className={idx % 2 === 0 ? "md:flex md:justify-end" : ""}>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            openExperience(exp);
+                          }}
+                          className="relative mt-4 inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-primary border border-primary/40 rounded-full overflow-hidden group"
+                        >
                         {/* Fill sweep layer */}
                         <span className="pointer-events-none absolute inset-0 overflow-hidden">
                           <span
@@ -225,7 +245,8 @@ export const Experience = () => {
                         </span>
 
                         <ChevronRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </button>
+                        </button>
+                      </div>
                     )}
 
 
@@ -255,7 +276,7 @@ export const Experience = () => {
       {/* Modal */}
       {selectedExp && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
-          <div className="glass rounded-3xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto border border-primary/30 animate-fade-in relative">
+          <div className="glass rounded-3xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto theme-scrollbar border border-primary/30 animate-fade-in relative">
 
             <button
               onClick={() => setSelectedExp(null)}

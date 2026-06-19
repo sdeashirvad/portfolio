@@ -48,7 +48,7 @@ export const AllProjectsModal = ({ isOpen, onClose }) => {
 
       <div
         ref={modalRef}
-        className="relative w-full max-w-6xl mx-4 my-8 md:my-12 max-h-[90vh] overflow-y-auto glass-strong rounded-3xl border border-primary/20 animate-fade-in"
+        className="relative w-full max-w-6xl mx-4 my-8 md:my-12 max-h-[90vh] overflow-y-auto theme-scrollbar glass-strong rounded-3xl border border-primary/20 animate-fade-in"
       >
         <div className="sticky top-0 z-10 glass-strong border-b border-border/50 px-6 py-5 flex items-start justify-between gap-4 rounded-t-3xl">
           <div>

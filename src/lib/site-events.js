@@ -1,7 +1,10 @@
 /**
- * Optional analytics — supports Plausible or GA4 via VITE_ANALYTICS_ID.
+ * Optional site events — supports Plausible or GA4 via VITE_ANALYTICS_ID.
  * Plausible: set VITE_ANALYTICS_DOMAIN=yourdomain.com
  * GA4: set VITE_ANALYTICS_ID=G-XXXXXXXXXX
+ *
+ * Named site-events.js (not analytics.js) so browser tracking protection
+ * and ad blockers do not block the app bundle on import.
  */
 export function initAnalytics() {
   const gaId = import.meta.env.VITE_ANALYTICS_ID;
