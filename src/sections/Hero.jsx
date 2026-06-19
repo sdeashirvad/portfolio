@@ -77,7 +77,7 @@ export const Hero = () => {
       <div className="absolute inset-0">
         <img
           src="/hero-bg.jpg"
-          alt=""
+          alt="Decorative dark gradient background with subtle network pattern"
           aria-hidden="true"
           className="w-full h-full object-cover opacity-40"
           fetchPriority="high"
