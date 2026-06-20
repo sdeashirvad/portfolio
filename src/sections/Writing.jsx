@@ -19,7 +19,7 @@ export const Writing = () => {
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            Deep dives on distributed systems, idempotency, caching, and production backend engineering.
+            Notes on distributed systems, idempotency, and production backends.
           </p>
         </div>
 

@@ -35,8 +35,7 @@ export const Projects = () => {
           </h2>
 
           <p className="text-muted-foreground animate-fade-in animation-delay-200 leading-relaxed">
-            Production-ready AI-driven platforms focused on backend reliability,
-            distributed systems, orchestration workflows, and scalable software infrastructure.
+            AI-driven platforms for backend reliability, data pipelines, and distributed systems.
           </p>
         </div>
 

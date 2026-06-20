@@ -1,28 +1,40 @@
-import { Server, Workflow, BrainCircuit, Blocks} from "lucide-react";
+import { Server, Workflow, BrainCircuit, Blocks, Layers, Cloud } from "lucide-react";
 
 const highlights = [
   {
     icon: Server,
     title: "Backend Architecture",
     description:
-      "Building resilient, highly scalable microservices and distributed systems utilizing robust frameworks like Spring Boot.",
+      "Resilient microservices and distributed systems with Spring Boot.",
   },
   {
     icon: Workflow,
     title: "Data Engineering & Pipelines",
     description:
-      "Designing fault-tolerant ETL pipelines, optimizing complex database queries, and managing distributed data processing engines.",
+      "Fault-tolerant ETL, query optimization, and distributed processing.",
   },
   {
     icon: BrainCircuit,
     title: "Agentic AI Workflows",
-    description: "Seamlessly integrating intelligent, autonomous agents and LLM capabilities into production systems to automate complex enterprise tasks.",
+    description: "LLM and agent workflows integrated into production systems.",
   },
   {
     icon: Blocks,
     title: "System Design",
     description:
-      "Architecting high-availability systems with a strict focus on idempotency, high-scale caching, and resilient data flows.",
+      "Idempotency, caching, and resilient data flows at scale.",
+  },
+  {
+    icon: Layers,
+    title: "Full-Stack Delivery",
+    description:
+      "Backend-led end-to-end features — Spring Boot APIs with React or Angular frontends.",
+  },
+  {
+    icon: Cloud,
+    title: "Cloud & DevOps",
+    description:
+      "Docker, AWS, and CI/CD for reliable deployment and production ops.",
   },
 ];
 
@@ -49,20 +61,14 @@ export const About = () => {
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                With 2+ years of experience building production-grade enterprise systems,
-                my expertise lies in heavy backend architecture and robust data engineering.
-                I focus on developing resilient, distributed services and moving beyond basic
-                API wrappers to solve complex, high-scale engineering challenges.
+                With 2+ years building production enterprise systems, I focus on backend
+                architecture and data engineering — resilient distributed services beyond
+                basic API wrappers.
               </p>
               <p>
-                My core specialty sits at the intersection of high-volume data processing and autonomous systems.
-                I architect robust ETL pipelines, optimize data streams, and integrate Agentic
-                AI to automate complex workflows and drive intelligent decision-making at scale.
-              </p>
-              <p>
-                By combining a rigorous foundation in data structures and algorithms with modern system design principles,
-                I architect solutions that are not just functional, but highly performant, maintainable,
-                and built to withstand enterprise-level loads.
+                My specialty sits at high-volume data processing and autonomous systems:
+                ETL pipelines, optimized data streams, and Agentic AI for intelligent
+                decision-making at scale.
               </p>
             </div>
 
@@ -77,10 +83,10 @@ export const About = () => {
                 System Design Snapshot — PnLGuard
               </p>
               <p className="text-xs font-mono text-muted-foreground leading-relaxed bg-surface rounded-lg px-4 py-3">
-                Ingest → Rule Engine → Redis Cache → GenAI Explainer → HITL Review → Audit Store
+                Ingest → Rule Engine → PostgreSQL Store → GenAI Explainer → HITL Review → Audit Store
               </p>
               <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
-                Decoupled detection from AI explanation so rule-based breaks stay deterministic while GenAI adds risk context for human reviewers.
+                Rules stay deterministic; GenAI adds context for human reviewers.
               </p>
             </div>
           </div>

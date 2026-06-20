@@ -40,7 +40,7 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
           <img
             key={index}
             src={image}
-            alt={`${project.title} platform screenshot ${index + 1}`}
+            alt={`${project.title} screenshot ${index + 1}`}
             className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
               index === activeIndex ? "opacity-100" : "opacity-0"
             }`}
@@ -50,7 +50,7 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
 
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
 
-        <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute inset-0 hidden md:flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           {hasLink && (
             <a
               href={project.link}
@@ -76,8 +76,35 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
           )}
         </div>
 
+        {(hasLink || hasGithub) && (
+          <div className="absolute bottom-0 inset-x-0 z-10 flex md:hidden gap-2 p-3 bg-card/95 backdrop-blur-sm border-t border-border/40">
+            {hasLink && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-primary/15 text-primary text-sm font-medium"
+              >
+                <ArrowUpRight className="w-4 h-4" />
+                Live Demo
+              </a>
+            )}
+            {hasGithub && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-surface text-foreground text-sm font-medium border border-border/50"
+              >
+                <Github className="w-4 h-4" />
+                GitHub
+              </a>
+            )}
+          </div>
+        )}
+
         {project.images.length > 1 && (
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 z-10 mb-12 md:mb-0">
             {project.images.map((_, index) => (
               <button
                 key={index}

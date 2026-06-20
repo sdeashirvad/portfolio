@@ -94,8 +94,8 @@ export const Contact = () => {
     }
   };
   return (
-    <section id="contact" className="py-32 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full">
+    <section id="contact" className="py-32 relative">
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
       </div>
@@ -114,14 +114,13 @@ export const Contact = () => {
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            Have an interesting engineering challenge? Whether you're scaling a complex backend,
-            building out data pipelines, or just want to talk system architecture, I'd love to hear from you. Drop me a message below.
+            Have an interesting backend, data, or AI platform challenge? I'd love to hear from you.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
-            <form className="space-y-6" onSubmit={handleSubmit}>
+        <div className="grid lg:grid-cols-2 lg:items-stretch gap-8 lg:gap-12 max-w-5xl mx-auto w-full min-w-0">
+          <div className="glass p-6 sm:p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300 w-full min-w-0 flex flex-col h-full">
+            <form className="space-y-6 flex flex-col h-full lg:flex-1" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
@@ -162,7 +161,7 @@ export const Contact = () => {
                 />
               </div>
 
-              <div>
+              <div className="lg:flex-1 lg:flex lg:flex-col">
                 <label
                   htmlFor="message"
                   className="block text-sm font-medium mb-2"
@@ -170,6 +169,7 @@ export const Contact = () => {
                   Message
                 </label>
                 <textarea
+                  id="message"
                   rows={5}
                   required
                   value={formData.message}
@@ -177,7 +177,7 @@ export const Contact = () => {
                     setFormData({ ...formData, message: e.target.value })
                   }
                   placeholder="Your message..."
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none lg:flex-1 lg:min-h-[180px]"
                 />
               </div>
 
@@ -218,8 +218,8 @@ export const Contact = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6 animate-fade-in animation-delay-400">
-            <div className="glass rounded-3xl p-8">
+          <div className="space-y-6 animate-fade-in animation-delay-400 w-full min-w-0">
+            <div className="glass rounded-3xl p-6 sm:p-8 w-full min-w-0">
               <h3 className="text-xl font-semibold mb-6">
                 Contact Information
               </h3>
@@ -245,20 +245,20 @@ export const Contact = () => {
             </div>
 
             {/* Availability Card */}
-            <div className="glass rounded-3xl p-8 border border-primary/30">
+            <div className="glass rounded-3xl p-6 sm:p-8 border border-primary/30 w-full min-w-0">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                 <span className="font-medium">Open to Collaboration</span>
               </div>
               <p className="text-muted-foreground text-sm space-y-2">
                 <span className="block">
-                  <strong className="text-foreground">Roles:</strong> Backend Engineer, Data Engineer, AI Platform Engineer
+                  <strong className="text-foreground">Focus:</strong> Backend systems, data pipelines, agentic AI platforms
                 </span>
                 <span className="block">
-                  <strong className="text-foreground">Location:</strong> Bengaluru, India — open to remote & hybrid
+                  <strong className="text-foreground">Based in:</strong> Bengaluru — happy to connect remotely
                 </span>
                 <span className="block">
-                  <strong className="text-foreground">Timeline:</strong> Available for immediate start on high-impact opportunities
+                  <strong className="text-foreground">Best for:</strong> Architecture discussions, OSS, product feedback, and selective side builds
                 </span>
               </p>
             </div>

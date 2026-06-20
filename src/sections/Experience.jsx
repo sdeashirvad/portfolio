@@ -168,8 +168,7 @@ export const Experience = () => {
           </h2>
 
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            My journey began in full-stack web development, but I quickly gravitated toward the heavy lifting:
-            engineering the distributed backend systems, data pipelines, and intelligent workflows that make platforms scale.
+            From full-stack roots to backend systems, data pipelines, and agentic workflows at scale.
           </p>
         </div>
 

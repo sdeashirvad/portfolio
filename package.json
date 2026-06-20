@@ -8,7 +8,9 @@
     "build": "vite build && node scripts/prerender-html.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "optimize:images": "node scripts/optimize-project-images.mjs"
+    "optimize:images": "node scripts/optimize-project-images.mjs",
+    "process:screenshots": "node scripts/process-project-screenshots.mjs",
+    "create:features": "node scripts/create-feature-images.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

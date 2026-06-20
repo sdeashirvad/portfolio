@@ -8,10 +8,20 @@ const projectsDir = path.join(__dirname, "../public/projects");
 const ogDir = path.join(__dirname, "../public/og");
 
 const projectTargets = [
+  "pnlGaurd-1.png",
+  "pnlGaurd-2.png",
+  "pnlGaurd-3.png",
+  "sentryAi-1.png",
+  "sentryAi-2.png",
+  "sentryAi-3.png",
+  "chatloom-1.png",
+  "chatloom-2.png",
+  "chatloom-3.png",
   "bloom-1.png",
   "bloom-2.png",
   "bloom-3.png",
   "veera-1.png",
+  "transactionGaurd-1.png",
 ];
 
 const ogTargets = [{ dir: ogDir, file: "main.png", width: 1200, height: 630 }];

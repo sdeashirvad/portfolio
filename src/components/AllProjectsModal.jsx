@@ -56,7 +56,7 @@ export const AllProjectsModal = ({ isOpen, onClose }) => {
               All Projects
             </h2>
             <p className="text-sm text-muted-foreground mt-1">
-              {projects.length} production and in-development builds from SDEAshirvad Labs
+              6 builds from SDEAshirvad Labs
             </p>
           </div>
           <button

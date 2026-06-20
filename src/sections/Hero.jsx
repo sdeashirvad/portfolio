@@ -107,7 +107,7 @@ export const Hero = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Backend & Data Engineer • Agentic AI Workflows
+                Backend & Data Engineer · Software Engineer II
               </span>
             </div>
 
@@ -123,31 +123,28 @@ export const Hero = () => {
               </h1>
 
               <p className="text-sm md:text-base text-primary/90 font-medium max-w-lg animate-fade-in animation-delay-150 border-l-2 border-primary/50 pl-4">
-                Morgan Stanley (via Wissen) · Led 3-person Airflow rollout · 40% faster P&L reporting
+                Morgan Stanley (via Wissen) · SE II · Agentic SDLC for 6 teams · Snowflake Cortex
               </p>
 
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Ashirvad. I architect production-grade distributed systems optimized for
-                reliability and scale — bridging heavy data engineering with agentic AI and automated workflows.
+                I build production backend systems and data pipelines — with agentic AI where it earns its place.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <a href="#contact">
-                <Button size="lg">
-                  Let's Talk <ArrowRight className="w-5 h-5" />
-                </Button>
-              </a>
-              <a
+              <Button href="#contact" size="lg">
+                Let's Talk <ArrowRight className="w-5 h-5" />
+              </Button>
+              <Button
                 href="https://www.linkedin.com/in/sdeashirvad/"
                 target="_blank"
                 rel="noopener noreferrer"
+                size="lg"
+                className="bg-secondary text-foreground hover:bg-secondary/80 shadow-none"
               >
-                <Button size="lg" className="bg-secondary text-foreground hover:bg-secondary/80 shadow-none">
-                  <Linkedin className="w-5 h-5" />
-                  Connect on LinkedIn
-                </Button>
-              </a>
+                <Linkedin className="w-5 h-5" />
+                Connect on LinkedIn
+              </Button>
               <AnimatedBorderButton
                 onClick={handleDownloadCV}
                 aria-label="Download CV"
@@ -198,7 +195,7 @@ export const Hero = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                     <span className="text-sm font-medium">
-                      Open to Backend / Data Eng roles
+                      Software Engineer II · Open to collaborate
                     </span>
                   </div>
                 </div>
@@ -217,16 +214,25 @@ export const Hero = () => {
             Technologies I work with
           </p>
           <div className="relative overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
-            <div className="flex animate-marquee">
-              {[...skills, ...skills].map((skill, idx) => (
-                <div key={idx} className="flex-shrink-0 px-8 py-4">
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            <div className="flex animate-marquee w-max">
+              {skills.map((skill) => (
+                <div key={skill} className="flex-shrink-0 px-8 py-4">
                   <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
                     {skill}
                   </span>
                 </div>
               ))}
+              <div className="flex shrink-0" aria-hidden="true">
+                {skills.map((skill) => (
+                  <div key={`dup-${skill}`} className="flex-shrink-0 px-8 py-4">
+                    <span className="text-xl font-semibold text-muted-foreground/50">
+                      {skill}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
