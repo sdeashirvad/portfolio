@@ -61,6 +61,18 @@ export const Writing = () => {
             </a>
           ))}
         </div>
+
+        <div className="text-center mt-16">
+          <a
+            href="https://sdeashirvad.medium.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors group"
+          >
+            <span>View all articles</span>
+            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </a>
+        </div>
       </div>
     </section>
   );
