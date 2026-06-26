@@ -54,7 +54,7 @@
 
   <meta
           property="og:description"
-          content="Founder of SDEAshirvad Labs building AI systems, backend infrastructure, developer tooling, and mobile products."
+          content="Founder of SDEAshirvad Labs. Building reliable software for developers, enterprise workflows, and AI-powered operations. Building independent products today that evolve into a connected engineering platform tomorrow."
   />
 
   <meta property="og:type" content="website" />
@@ -112,12 +112,59 @@
             "@id": "https://ashirvad.work/#organization"
           },
           "sameAs": [
+            "https://ashirvad.work/",
             "https://sdeashirvad.com/",
             "https://www.linkedin.com/in/sdeashirvad/",
             "https://github.com/sdeashirvad",
             "https://x.com/sdeashirvad",
             "https://sdeashirvad.medium.com/",
             "https://leetcode.com/u/ashirvadpandey1/"
+          ],
+          "review": [
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Ajay Gahalot",
+                "jobTitle": "Principal Engineer",
+                "image": "https://ashirvad.work/ajay-gahalot.jpg"
+              },
+              "reviewBody": "Ashirvad is the kind of backend engineer you trust with your most critical systems. He picks up unfamiliar tech stacks incredibly fast, immediately contributing production-ready code. When he owns a service, I know it will be delivered robustly with zero handholding.",
+              "itemReviewed": { "@id": "https://ashirvad.work/#person" }
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Aakshi Gulati",
+                "jobTitle": "Software Engineer",
+                "image": "https://ashirvad.work/aakshi.jpg"
+              },
+              "reviewBody": "As a mentor, Ashirvad has a remarkable ability to break down complex concepts into practical solutions. He guided me through distributed system design, always ensuring I understood the 'why' behind architectural decisions. Working with him significantly elevated my understanding of modern backend architectures.",
+              "itemReviewed": { "@id": "https://ashirvad.work/#person" }
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Nikhil Satyam",
+                "jobTitle": "Software Engineer",
+                "image": "https://ashirvad.work/nikhil-satyam.jpg"
+              },
+              "reviewBody": "I collaborated with Ashirvad on a large-scale application migration to Spring Boot and React. He combines deep technical expertise in Java, Spark, and Snowflake with clear communication and a high sense of ownership. He is an incredibly dependable engineer who consistently delivers.",
+              "itemReviewed": { "@id": "https://ashirvad.work/#person" }
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Abir Saha",
+                "jobTitle": "Software Engineer",
+                "image": "https://ashirvad.work/abir.jpg"
+              },
+              "reviewBody": "Ashirvad is an outstanding backend engineer and easily the best mentor I've worked with. Our architecture whiteboard sessions highlighted his deep knowledge of Spring Boot and microservices. Beyond writing great code, he knows exactly how to elevate junior developers through complex enterprise deployments.",
+              "itemReviewed": { "@id": "https://ashirvad.work/#person" }
+            }
           ]
         },
 
@@ -125,14 +172,137 @@
           "@type": "Organization",
           "@id": "https://ashirvad.work/#organization",
           "name": "SDEAshirvad Labs",
-          "url": "https://ashirvad.work/",
-          "logo": "https://ashirvad.work/ashirvad.svg",
+          "url": "https://labs.sdeashirvad.com/",
+          "logo": "https://labs.sdeashirvad.com/ashirvad.svg",
+          "description": "Building reliable software for developers, enterprise workflows, and AI-powered operations. Building independent products today that evolve into a connected engineering platform tomorrow.",
           "founder": {
             "@id": "https://ashirvad.work/#person"
           },
           "sameAs": [
+            "https://labs.sdeashirvad.com/",
             "https://github.com/sdeashirvad",
             "https://x.com/sdeashirvad"
+          ]
+        },
+
+        {
+          "@type": "WebSite",
+          "@id": "https://sdeashirvad.com/#website",
+          "url": "https://labs.sdeashirvad.com/",
+          "name": "SDEAshirvad Labs",
+          "publisher": {
+            "@id": "https://ashirvad.work/#organization"
+          },
+          "inLanguage": "en"
+        },
+
+        {
+          "@type": "WebPage",
+          "@id": "https://labs.sdeashirvad.com/ecosystem#webpage",
+          "url": "https://labs.sdeashirvad.com/ecosystem",
+          "name": "SDEAshirvad Labs Product Ecosystem",
+          "description": "Interactive architecture graph: five independent products shipping standalone today, with implemented integrations and a planned platform roadmap. Independent today. Connected tomorrow.",
+          "isPartOf": {
+            "@id": "https://labs.sdeashirvad.com/#website"
+          },
+          "publisher": {
+            "@id": "https://ashirvad.work/#organization"
+          },
+          "inLanguage": "en"
+        },
+
+        {
+          "@type": "Thing",
+          "@id": "https://ashirvad.work/#ecosystem",
+          "name": "SDEAshirvad Labs Product Ecosystem Graph",
+          "alternateName": "5 Independent Products. One Platform Vision.",
+          "description": "A network topology of five live, standalone SDEAshirvad Labs products organized in four layers: Contract Governance (SpecSentinel), Business Applications (PnLGuard, ChatLoom), Platform (GoForge), and Operational Intelligence (SentryAI). Each product deploys independently. Implemented integrations today: SpecSentinel to PnLGuard and ChatLoom for API contract governance in CI; GoForge to SentryAI for orchestration failure diagnosis. Planned platform integrations include SpecSentinel to GoForge and SentryAI, GoForge to PnLGuard and ChatLoom, and operational intelligence links from PnLGuard and ChatLoom to SentryAI. Roadmap phases: (1) independent products — complete; (2) cross-product orchestration — in progress; (3) unified operational intelligence — planned.",
+          "creator": {
+            "@id": "https://ashirvad.work/#organization"
+          },
+          "url": "https://labs.sdeashirvad.com/ecosystem",
+          "subjectOf": {
+            "@id": "https://labs.sdeashirvad.com/ecosystem#webpage"
+          }
+        },
+
+        {
+          "@type": "ItemList",
+          "@id": "https://ashirvad.work/#ecosystem-products",
+          "name": "SDEAshirvad Labs Live Ecosystem Products",
+          "description": "Five production-ready products in the SDEAshirvad Labs ecosystem graph. All ship standalone; platform wiring is added incrementally.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SpecSentinel",
+              "description": "Contract Governance — open-source API contract governance and CI gates.",
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "SpecSentinel",
+                "applicationCategory": "DeveloperApplication",
+                "url": "https://specsentinel.sdeashirvad.com/",
+                "isRelatedTo": [
+                  { "@type": "SoftwareApplication", "name": "PnLGuard", "url": "https://pnlguard.sdeashirvad.com/" },
+                  { "@type": "SoftwareApplication", "name": "ChatLoom", "url": "https://chatloom.sdeashirvad.com/" },
+                  { "@type": "SoftwareApplication", "name": "GoForge", "url": "https://goforge.sdeashirvad.com/" },
+                  { "@type": "SoftwareApplication", "name": "SentryAI", "url": "https://sentryai.sdeashirvad.com/" }
+                ]
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "PnLGuard",
+              "description": "Business Applications — AI-assisted financial anomaly monitoring.",
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "PnLGuard",
+                "applicationCategory": "BusinessApplication",
+                "url": "https://pnlguard.sdeashirvad.com/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "ChatLoom",
+              "description": "Business Applications — multi-channel GenAI interaction platform.",
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "ChatLoom",
+                "applicationCategory": "BusinessApplication",
+                "url": "https://chatloom.sdeashirvad.com/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "GoForge",
+              "description": "Platform — workflow orchestration with worker pools, queues, and observability.",
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "GoForge",
+                "applicationCategory": "DeveloperApplication",
+                "url": "https://goforge.sdeashirvad.com/",
+                "isRelatedTo": {
+                  "@type": "SoftwareApplication",
+                  "name": "SentryAI",
+                  "url": "https://sentryai.sdeashirvad.com/"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "SentryAI",
+              "description": "Operational Intelligence — ETL failure diagnosis and incident handoffs.",
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "SentryAI",
+                "applicationCategory": "DeveloperApplication",
+                "url": "https://sentryai.sdeashirvad.com/"
+              }
+            }
           ]
         },
 
@@ -154,6 +324,84 @@
           "about": {
             "@id": "https://ashirvad.work/#person"
           }
+        },
+
+        {
+          "@type": "WebPage",
+          "@id": "https://ashirvad.work/#testimonials",
+          "url": "https://ashirvad.work/#testimonials",
+          "name": "Feedback & References",
+          "description": "Professional recommendations from colleagues and mentees on Ashirvad Kumar Pandey's backend engineering, mentorship, and enterprise delivery.",
+          "isPartOf": { "@id": "https://ashirvad.work/#website" },
+          "about": { "@id": "https://ashirvad.work/#person" },
+          "mainEntity": { "@id": "https://ashirvad.work/#recommendations" },
+          "inLanguage": "en"
+        },
+
+        {
+          "@type": "ItemList",
+          "@id": "https://ashirvad.work/#recommendations",
+          "name": "Professional Recommendations",
+          "description": "Colleague and mentee testimonials — backend engineering, distributed systems, Spring Boot, Snowflake, Spark, and technical mentorship.",
+          "numberOfItems": 4,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Ajay Gahalot",
+                  "jobTitle": "Principal Engineer"
+                },
+                "reviewBody": "Ashirvad is the kind of backend engineer you trust with your most critical systems. He picks up unfamiliar tech stacks incredibly fast, immediately contributing production-ready code. When he owns a service, I know it will be delivered robustly with zero handholding.",
+                "itemReviewed": { "@id": "https://ashirvad.work/#person" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Aakshi Gulati",
+                  "jobTitle": "Software Engineer"
+                },
+                "reviewBody": "As a mentor, Ashirvad has a remarkable ability to break down complex concepts into practical solutions. He guided me through distributed system design, always ensuring I understood the 'why' behind architectural decisions. Working with him significantly elevated my understanding of modern backend architectures.",
+                "itemReviewed": { "@id": "https://ashirvad.work/#person" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Nikhil Satyam",
+                  "jobTitle": "Software Engineer"
+                },
+                "reviewBody": "I collaborated with Ashirvad on a large-scale application migration to Spring Boot and React. He combines deep technical expertise in Java, Spark, and Snowflake with clear communication and a high sense of ownership. He is an incredibly dependable engineer who consistently delivers.",
+                "itemReviewed": { "@id": "https://ashirvad.work/#person" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Abir Saha",
+                  "jobTitle": "Software Engineer"
+                },
+                "reviewBody": "Ashirvad is an outstanding backend engineer and easily the best mentor I've worked with. Our architecture whiteboard sessions highlighted his deep knowledge of Spring Boot and microservices. Beyond writing great code, he knows exactly how to elevate junior developers through complex enterprise deployments.",
+                "itemReviewed": { "@id": "https://ashirvad.work/#person" }
+              }
+            }
+          ]
         },
 
         {
@@ -187,12 +435,18 @@
             {
               "@type": "SoftwareApplication",
               "position": 5,
+              "name": "GoForge",
+              "url": "https://goforge.sdeashirvad.com/"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "position": 6,
               "name": "SentryAI",
               "url": "https://sentryai.sdeashirvad.com/"
             },
             {
               "@type": "SoftwareApplication",
-              "position": 6,
+              "position": 7,
               "name": "Veera",
               "url": "https://veera.sdeashirvad.com/"
             }

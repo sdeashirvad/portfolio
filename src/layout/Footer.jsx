@@ -65,7 +65,13 @@ export const Footer = () => {
 
             <p className="text-sm text-muted-foreground mt-2">
                 © {currentYear} SDEAshirvad Labs
-                </p>
+            </p>
+            <p className="text-xs text-muted-foreground/80 mt-2 max-w-sm">
+              Building reliable software for developers, enterprise workflows, and AI-powered operations.
+            </p>
+            <p className="text-xs text-muted-foreground/80 mt-1 max-w-sm">
+              Building independent products that evolve into a connected engineering platform.
+            </p>
             <p className="text-xs text-muted-foreground/80 mt-1">
              Ashirvad Kumar Pandey (sdeashirvad)
              </p>
