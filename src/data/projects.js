@@ -1,5 +1,44 @@
 export const projects = [
   {
+    title: "SpecSentinel — API Contract Governance Platform",
+    description:
+      "Detect breaking OpenAPI changes, score deployment risk, and enforce governance via CLI, GitHub Actions, and PR comments.",
+    images: [
+      "/projects/specsentinel-0.png",
+      "/projects/specsentinel-1.png",
+      "/projects/specsentinel-2.png",
+      "/projects/specsentinel-3.png",
+      "/projects/specsentinel-4.png",
+    ],
+    tags: [
+      "TypeScript",
+      "Node.js",
+      "React",
+      "OpenAPI",
+      "GitHub Actions",
+      "API Governance",
+    ],
+    link: "https://specsentinel.sdeashirvad.com",
+    github: "https://github.com/sdeashirvad/specsentinel",
+    npm: "https://www.npmjs.com/package/specsentinel",
+    moat: "Published on npm — install via npx specsentinel in any CI pipeline",
+    featured: true,
+    highlights: {
+      metrics: [
+        "Breaking change detection on OpenAPI specs",
+        "Published on npm — npx specsentinel for CI/CD pipelines",
+        "Configurable governance policies with deployment risk scoring",
+      ],
+      architecture: [
+        "CLI + GitHub Actions integration with PR comment workflow",
+        "Studio/WebView for interactive contract review",
+      ],
+      ownership: "Founder & lead engineer",
+    },
+    architectureNote:
+      "Spec Diff → Risk Engine → Policy Gate → CLI / GitHub Actions / PR Comment / Studio",
+  },
+  {
     title: "PnLGuard AI — Financial Anomaly Monitoring Platform",
     description:
       "Rule + AI anomaly detection on P&L feeds with HITL review and audit trail.",
@@ -9,7 +48,7 @@ export const projects = [
       "/projects/pnlGaurd-3.png",
     ],
     tags: ["React", "Spring Boot", "PostgreSQL", "GenAI", "Docker"],
-    link: "https://pnlgaurd.ashirvad.work",
+    link: "https://pnlguard.sdeashirvad.com",
     github: "https://github.com/sdeashirvad/pnlgaurd",
     featured: true,
     highlights: {
@@ -27,28 +66,30 @@ export const projects = [
       "Ingest → Rule Engine → PostgreSQL Store → GenAI Explainer → HITL Review → Audit Store",
   },
   {
-    title: "AirflowSentry AI — ETL Failure Diagnosis Console",
+    title: "Bloom — Quiet Pregnancy Companion",
     description:
-      "Airflow failure diagnosis — root-cause classification and retry-safe remediation.",
+      "Offline-first pregnancy companion — local journaling, milestones, memory export.",
     images: [
-      "/projects/sentryAi-1.png",
-      "/projects/sentryAi-2.png",
-      "/projects/sentryAi-3.png",
+      "/projects/bloom-1.png",
+      "/projects/bloom-2.png",
+      "/projects/bloom-3.png",
     ],
-    tags: ["React", "Spring Boot", "AI Ops", "Airflow", "Docker"],
-    link: "https://sentryai.ashirvad.work",
-    github: "https://github.com/sdeashirvad/airflow-sentry-ai",
+    tags: ["React Native", "Android", "Offline-First", "Mobile", "Product Design"],
+    link: "https://bloom.sdeashirvad.com",
+    github: null,
+    sourcePrivate: true,
+    sourceNote: "Proprietary product — source private ahead of Play Store release.",
     featured: true,
     highlights: {
       metrics: [
-        "Structured root-cause classification for Airflow failures",
-        "Exportable incident summaries for SRE handoffs",
+        "Week-by-week guidance with mood check-ins and milestone memories",
+        "100% on-device storage — no account or internet required",
       ],
       architecture: [
-        "Spring Boot backend parsing Airflow failure payloads",
-        "LLM-driven classification with templated incident responses",
+        "Offline-first local storage with privacy-by-design data model",
+        "Modular screens: home, reflect, memories, and keepsake export",
       ],
-      ownership: "Sole builder",
+      ownership: "Founder & lead engineer",
     },
   },
   {
@@ -68,7 +109,7 @@ export const projects = [
       "Docker",
       "REST APIs",
     ],
-    link: "https://chatloom.ashirvad.work",
+    link: "https://chatloom.sdeashirvad.com",
     github: "https://github.com/sdeashirvad/chat-loom",
     featured: true,
     highlights: {
@@ -81,6 +122,59 @@ export const projects = [
         "REST API facade designed for future AI-Ops extensions",
       ],
       ownership: "Backend architect",
+    },
+  },
+  {
+    title: "GoForge — Workflow Orchestration Platform",
+    description:
+      "Go-based job orchestration with worker pools, queue depth monitoring, retries, and real-time Observatory.",
+    images: [
+      "/projects/goforge-1.png",
+      "/projects/goforge-2.png",
+      "/projects/goforge-3.png",
+      "/projects/goforge-4.png",
+    ],
+    tags: ["Go", "Worker Pools", "Job Queues", "Retries", "Observability"],
+    link: "https://goforge.sdeashirvad.com",
+    github: "https://github.com/sdeashirvad",
+    featured: false,
+    highlights: {
+      metrics: [
+        "Real-time worker pool and queue depth observatory",
+        "Configurable retries with job lifecycle tracking",
+      ],
+      architecture: [
+        "Job Submit → Queue Buffer → Worker Pool → Retry Policy → Observatory UI",
+        "Watch orchestration breathe before failures cascade",
+      ],
+      ownership: "Founder & lead engineer",
+    },
+    architectureNote:
+      "Job Submit → Queue Buffer → Worker Pool → Retry Policy → Status Store → Observatory UI",
+  },
+  {
+    title: "AirflowSentry AI — ETL Failure Diagnosis Console",
+    description:
+      "Airflow failure diagnosis — root-cause classification and retry-safe remediation.",
+    images: [
+      "/projects/sentryAi-1.png",
+      "/projects/sentryAi-2.png",
+      "/projects/sentryAi-3.png",
+    ],
+    tags: ["React", "Spring Boot", "AI Ops", "Airflow", "Docker"],
+    link: "https://sentryai.sdeashirvad.com",
+    github: "https://github.com/sdeashirvad/airflow-sentry-ai",
+    featured: false,
+    highlights: {
+      metrics: [
+        "Structured root-cause classification for Airflow failures",
+        "Exportable incident summaries for SRE handoffs",
+      ],
+      architecture: [
+        "Spring Boot backend parsing Airflow failure payloads",
+        "LLM-driven classification with templated incident responses",
+      ],
+      ownership: "Sole builder",
     },
   },
   {
@@ -99,7 +193,7 @@ export const projects = [
     link: null,
     github: null,
     status: "in-progress",
-    featured: true,
+    featured: false,
     wipNote:
       "WIP — Redis idempotency middleware with Lua-based distributed locking.",
     highlights: {
@@ -112,33 +206,6 @@ export const projects = [
         "Spring Boot middleware intercepting retry-prone endpoints",
       ],
       ownership: "In active development",
-    },
-  },
-  {
-    title: "Bloom — Quiet Pregnancy Companion",
-    description:
-      "Offline-first pregnancy companion — local journaling, milestones, memory export.",
-    images: [
-      "/projects/bloom-1.png",
-      "/projects/bloom-2.png",
-      "/projects/bloom-3.png",
-    ],
-    tags: ["React Native", "Android", "Offline-First", "Mobile", "Product Design"],
-    link: "https://bloom.ashirvad.work",
-    github: null,
-    sourcePrivate: true,
-    sourceNote: "Proprietary product — source private ahead of Play Store release.",
-    featured: false,
-    highlights: {
-      metrics: [
-        "Week-by-week guidance with mood check-ins and milestone memories",
-        "100% on-device storage — no account or internet required",
-      ],
-      architecture: [
-        "Offline-first local storage with privacy-by-design data model",
-        "Modular screens: home, reflect, memories, and keepsake export",
-      ],
-      ownership: "Founder & lead engineer",
     },
   },
   {

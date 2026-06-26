@@ -4,57 +4,80 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
 >
 
-    <!-- Root Portfolio (canonical) -->
+    <!-- Root Portfolio (canonical personal site) -->
 
     <url>
         <loc>https://ashirvad.work/</loc>
-        <lastmod>2026-06-19</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
-    <!-- Mirror portfolio (sdeashirvad.com) -->
+    <!-- Mirror portfolio -->
 
     <url>
         <loc>https://sdeashirvad.com/</loc>
-        <lastmod>2026-06-19</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
-    <!-- Product Ecosystem -->
+    <!-- SDEAshirvad Labs -->
 
     <url>
-        <loc>https://bloom.ashirvad.work/</loc>
-        <lastmod>2026-06-19</lastmod>
+        <loc>https://labs.sdeashirvad.com/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Product Ecosystem (sdeashirvad.com) -->
+
+    <url>
+        <loc>https://specsentinel.sdeashirvad.com/</loc>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://chatloom.ashirvad.work/</loc>
-        <lastmod>2026-06-19</lastmod>
+        <loc>https://bloom.sdeashirvad.com/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://chatloom.sdeashirvad.com/</loc>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://pnlgaurd.ashirvad.work/</loc>
-        <lastmod>2026-06-19</lastmod>
+        <loc>https://pnlguard.sdeashirvad.com/</loc>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://sentryai.ashirvad.work/</loc>
-        <lastmod>2026-06-19</lastmod>
+        <loc>https://sentryai.sdeashirvad.com/</loc>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://goforge.sdeashirvad.com/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://veera.sdeashirvad.com/</loc>
-        <lastmod>2026-06-19</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

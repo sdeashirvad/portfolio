@@ -59,10 +59,11 @@ Use these bullets (pick 3–4 for one page; keep metrics):
 
 | Project | Status | Link |
 |---------|--------|------|
-| PnLGuard AI | Live | pnlgaurd.ashirvad.work |
-| AirflowSentry AI | Live | sentryai.ashirvad.work |
-| ChatLoom | Live | chatloom.ashirvad.work |
-| Bloom | Private / Play Store prep | bloom.ashirvad.work |
+| SpecSentinel | Live | specsentinel.sdeashirvad.com |
+| PnLGuard AI | Live | pnlguard.sdeashirvad.com |
+| AirflowSentry AI | Live | sentryai.sdeashirvad.com |
+| ChatLoom | Live | chatloom.sdeashirvad.com |
+| Bloom | Private / Play Store prep | bloom.sdeashirvad.com |
 | Veera | In development | **veera.sdeashirvad.com** |
 | Transaction Guard | WIP | Omit live link or note "In development" |
 

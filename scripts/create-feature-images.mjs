@@ -67,6 +67,28 @@ const featureCards = [
     ],
     inPlace: true,
   },
+  {
+    output: "goforge-1.png",
+    screenshot: "goforge-2.png",
+    name: "GoForge",
+    tagline: "Workflow Orchestration Platform",
+    bullets: [
+      "Real-time worker pool observatory",
+      "Queue depth & job lifecycle tracking",
+      "Configurable retries & scheduling",
+    ],
+  },
+  {
+    output: "specsentinel-1.png",
+    screenshot: "specsentinel-2.png",
+    name: "SpecSentinel",
+    tagline: "API Contract Governance",
+    bullets: [
+      "Breaking OpenAPI change detection",
+      "Deployment risk scoring",
+      "CLI + GitHub Actions + PR comments",
+    ],
+  },
 ];
 
 function escapeXml(str) {

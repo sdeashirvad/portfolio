@@ -1,6 +1,19 @@
 import { useState, useEffect } from "react";
 import { ArrowUpRight, Github } from "lucide-react";
 
+function NpmIcon({ className }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M1.763 0C.786 0 0 .786 0 1.763v20.474C0 23.214.786 24 1.763 24h20.474c.977 0 1.763-.786 1.763-1.763V1.763C24 .786 23.214 0 22.237 0H1.763zm14.337 6.851c.066.002.127.028.165.07.038.042.058.1.054.16v7.838c.004.06-.016.118-.054.16a.217.217 0 0 1-.165.071H8.502a.211.211 0 0 1-.144-.056.198.198 0 0 1-.062-.1.211.211 0 0 1-.062.1.198.198 0 0 1-.144.056H5.193V8.851h2.024v7.838h2.024V8.851h6.858z" />
+    </svg>
+  );
+}
+
 export const ProjectCard = ({ project, idx, variant = "compact" }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -18,6 +31,7 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
 
   const hasLink = project.link && project.link !== "#";
   const hasGithub = project.github && project.github !== "#";
+  const hasNpm = project.npm && project.npm !== "#";
 
   return (
     <article
@@ -34,6 +48,18 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
           <div className="absolute top-3 left-3 z-10 bg-amber-500 text-black text-xs font-bold px-2.5 py-1 rounded-full">
             In Development
           </div>
+        )}
+
+        {project.moat && (
+          <a
+            href={project.npm || project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute top-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-[#cb3837]/40 bg-[#cb3837]/15 px-3 py-1.5 text-xs font-semibold text-[#ff6b6b] backdrop-blur-sm transition-colors hover:bg-[#cb3837]/25"
+          >
+            <NpmIcon className="h-3.5 w-3.5" />
+            npm
+          </a>
         )}
 
         {project.images.map((image, index) => (
@@ -74,9 +100,21 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
               <Github className="w-5 h-5" />
             </a>
           )}
+
+          {hasNpm && (
+            <a
+              href={project.npm}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${project.title} on npm`}
+              className="p-3 rounded-full glass hover:bg-[#cb3837] hover:text-white transition-all text-[#ff6b6b]"
+            >
+              <NpmIcon className="w-5 h-5" />
+            </a>
+          )}
         </div>
 
-        {(hasLink || hasGithub) && (
+        {(hasLink || hasGithub || hasNpm) && (
           <div className="absolute bottom-0 inset-x-0 z-10 flex md:hidden gap-2 p-3 bg-card/95 backdrop-blur-sm border-t border-border/40">
             {hasLink && (
               <a
@@ -98,6 +136,17 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
               >
                 <Github className="w-4 h-4" />
                 GitHub
+              </a>
+            )}
+            {hasNpm && (
+              <a
+                href={project.npm}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-[#cb3837]/15 text-[#ff6b6b] text-sm font-medium border border-[#cb3837]/30"
+              >
+                <NpmIcon className="w-4 h-4" />
+                npm
               </a>
             )}
           </div>
@@ -134,6 +183,18 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
         <p className="text-muted-foreground text-sm leading-relaxed">
           {project.description}
         </p>
+
+        {project.moat && (
+          <a
+            href={project.npm}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border border-[#cb3837]/30 bg-[#cb3837]/10 px-3 py-2 text-xs font-medium text-[#ff8a8a] transition-colors hover:bg-[#cb3837]/20"
+          >
+            <NpmIcon className="h-4 w-4 shrink-0" />
+            <span>{project.moat}</span>
+          </a>
+        )}
 
         {project.wipNote && isDetailed && (
           <p className="text-amber-400/90 text-xs leading-relaxed border border-amber-500/20 rounded-lg px-3 py-2 bg-amber-500/5">
