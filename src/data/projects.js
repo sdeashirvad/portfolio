@@ -21,12 +21,14 @@ export const projects = [
     link: "https://specsentinel.sdeashirvad.com",
     github: "https://github.com/sdeashirvad/specsentinel",
     npm: "https://www.npmjs.com/package/specsentinel",
-    moat: "Published on npm — install via npx specsentinel in any CI pipeline",
+    marketplace: "https://github.com/marketplace/actions/specsentinel",
+    moat: "Live on npm & GitHub Marketplace — drop into any CI pipeline",
     featured: true,
     highlights: {
       metrics: [
         "Breaking change detection on OpenAPI specs",
         "Published on npm — npx specsentinel for CI/CD pipelines",
+        "GitHub Marketplace Action — one-click install in workflows",
         "Configurable governance policies with deployment risk scoring",
       ],
       architecture: [

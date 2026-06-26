@@ -14,6 +14,19 @@ function NpmIcon({ className }) {
   );
 }
 
+function MarketplaceIcon({ className }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M4.5 3.75a3 3 0 0 0-3 3v.75h21v-.75a3 3 0 0 0-3-3h-15Zm-1.5 6v8.25a3 3 0 0 0 3 3h13.5a3 3 0 0 0 3-3V9.75H3Zm6.75 3.75a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm4.5 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
+    </svg>
+  );
+}
+
 export const ProjectCard = ({ project, idx, variant = "compact" }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -32,6 +45,7 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
   const hasLink = project.link && project.link !== "#";
   const hasGithub = project.github && project.github !== "#";
   const hasNpm = project.npm && project.npm !== "#";
+  const hasMarketplace = project.marketplace && project.marketplace !== "#";
 
   return (
     <article
@@ -50,16 +64,31 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
           </div>
         )}
 
-        {project.moat && (
-          <a
-            href={project.npm || project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute top-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-[#cb3837]/40 bg-[#cb3837]/15 px-3 py-1.5 text-xs font-semibold text-[#ff6b6b] backdrop-blur-sm transition-colors hover:bg-[#cb3837]/25"
-          >
-            <NpmIcon className="h-3.5 w-3.5" />
-            npm
-          </a>
+        {(hasNpm || hasMarketplace) && (
+          <div className="absolute top-3 right-3 z-10 flex gap-2">
+            {hasNpm && (
+              <a
+                href={project.npm}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-[#cb3837]/40 bg-[#cb3837]/15 px-3 py-1.5 text-xs font-semibold text-[#ff6b6b] backdrop-blur-sm transition-colors hover:bg-[#cb3837]/25"
+              >
+                <NpmIcon className="h-3.5 w-3.5" />
+                npm
+              </a>
+            )}
+            {hasMarketplace && (
+              <a
+                href={project.marketplace}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/15 px-3 py-1.5 text-xs font-semibold text-primary backdrop-blur-sm transition-colors hover:bg-primary/25"
+              >
+                <MarketplaceIcon className="h-3.5 w-3.5" />
+                Marketplace
+              </a>
+            )}
+          </div>
         )}
 
         {project.images.map((image, index) => (
@@ -112,9 +141,21 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
               <NpmIcon className="w-5 h-5" />
             </a>
           )}
+
+          {hasMarketplace && (
+            <a
+              href={project.marketplace}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${project.title} on GitHub Marketplace`}
+              className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all text-primary"
+            >
+              <MarketplaceIcon className="w-5 h-5" />
+            </a>
+          )}
         </div>
 
-        {(hasLink || hasGithub || hasNpm) && (
+        {(hasLink || hasGithub || hasNpm || hasMarketplace) && (
           <div className="absolute bottom-0 inset-x-0 z-10 flex md:hidden gap-2 p-3 bg-card/95 backdrop-blur-sm border-t border-border/40">
             {hasLink && (
               <a
@@ -147,6 +188,17 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
               >
                 <NpmIcon className="w-4 h-4" />
                 npm
+              </a>
+            )}
+            {hasMarketplace && (
+              <a
+                href={project.marketplace}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-primary/15 text-primary text-sm font-medium border border-primary/30"
+              >
+                <MarketplaceIcon className="w-4 h-4" />
+                Marketplace
               </a>
             )}
           </div>
@@ -185,15 +237,33 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
         </p>
 
         {project.moat && (
-          <a
-            href={project.npm}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-[#cb3837]/30 bg-[#cb3837]/10 px-3 py-2 text-xs font-medium text-[#ff8a8a] transition-colors hover:bg-[#cb3837]/20"
-          >
-            <NpmIcon className="h-4 w-4 shrink-0" />
-            <span>{project.moat}</span>
-          </a>
+          <div className="flex flex-wrap gap-2">
+            <p className="w-full text-xs font-medium text-muted-foreground">
+              {project.moat}
+            </p>
+            {hasNpm && (
+              <a
+                href={project.npm}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-[#cb3837]/30 bg-[#cb3837]/10 px-3 py-2 text-xs font-medium text-[#ff8a8a] transition-colors hover:bg-[#cb3837]/20"
+              >
+                <NpmIcon className="h-4 w-4 shrink-0" />
+                npm package
+              </a>
+            )}
+            {hasMarketplace && (
+              <a
+                href={project.marketplace}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-primary/30 bg-primary/10 px-3 py-2 text-xs font-medium text-primary transition-colors hover:bg-primary/20"
+              >
+                <MarketplaceIcon className="h-4 w-4 shrink-0" />
+                GitHub Marketplace
+              </a>
+            )}
+          </div>
         )}
 
         {project.wipNote && isDetailed && (
