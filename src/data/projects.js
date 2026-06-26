@@ -5,7 +5,6 @@ export const projects = [
       "Detect breaking OpenAPI changes, score deployment risk, and enforce governance via CLI, GitHub Actions, and PR comments.",
     images: [
       "/projects/specsentinel-0.png",
-      "/projects/specsentinel-1.png",
       "/projects/specsentinel-2.png",
       "/projects/specsentinel-3.png",
       "/projects/specsentinel-4.png",
