@@ -47,6 +47,17 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
   const hasNpm = project.npm && project.npm !== "#";
   const hasMarketplace = project.marketplace && project.marketplace !== "#";
 
+  const showMoatLinks = Boolean(project.moat && (hasNpm || hasMarketplace));
+  const showNpmInMobileBar = hasNpm && !showMoatLinks;
+  const showMarketplaceInMobileBar = hasMarketplace && !showMoatLinks;
+  const mobileBarLinkCount = [
+    hasLink,
+    hasGithub,
+    showNpmInMobileBar,
+    showMarketplaceInMobileBar,
+  ].filter(Boolean).length;
+  const hasMobileBar = mobileBarLinkCount > 0;
+
   return (
     <article
       className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
@@ -65,7 +76,7 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
         )}
 
         {(hasNpm || hasMarketplace) && (
-          <div className="absolute top-3 right-3 z-10 flex gap-2">
+          <div className="absolute top-3 right-3 z-10 hidden md:flex gap-2">
             {hasNpm && (
               <a
                 href={project.npm}
@@ -155,17 +166,21 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
           )}
         </div>
 
-        {(hasLink || hasGithub || hasNpm || hasMarketplace) && (
-          <div className="absolute bottom-0 inset-x-0 z-10 flex md:hidden gap-2 p-3 bg-card/95 backdrop-blur-sm border-t border-border/40">
+        {hasMobileBar && (
+          <div
+            className={`absolute bottom-0 inset-x-0 z-10 md:hidden gap-2 p-3 bg-card/95 backdrop-blur-sm border-t border-border/40 ${
+              mobileBarLinkCount > 2 ? "grid grid-cols-2" : "flex"
+            }`}
+          >
             {hasLink && (
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-primary/15 text-primary text-sm font-medium"
+                className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-primary/15 text-primary text-sm font-medium min-w-0"
               >
-                <ArrowUpRight className="w-4 h-4" />
-                Live Demo
+                <ArrowUpRight className="w-4 h-4 shrink-0" />
+                <span className="truncate">Live Demo</span>
               </a>
             )}
             {hasGithub && (
@@ -173,39 +188,43 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-surface text-foreground text-sm font-medium border border-border/50"
+                className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-surface text-foreground text-sm font-medium border border-border/50 min-w-0"
               >
-                <Github className="w-4 h-4" />
-                GitHub
+                <Github className="w-4 h-4 shrink-0" />
+                <span className="truncate">GitHub</span>
               </a>
             )}
-            {hasNpm && (
+            {showNpmInMobileBar && (
               <a
                 href={project.npm}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-[#cb3837]/15 text-[#ff6b6b] text-sm font-medium border border-[#cb3837]/30"
+                className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-[#cb3837]/15 text-[#ff6b6b] text-sm font-medium border border-[#cb3837]/30 min-w-0"
               >
-                <NpmIcon className="w-4 h-4" />
-                npm
+                <NpmIcon className="w-4 h-4 shrink-0" />
+                <span className="truncate">npm</span>
               </a>
             )}
-            {hasMarketplace && (
+            {showMarketplaceInMobileBar && (
               <a
                 href={project.marketplace}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-primary/15 text-primary text-sm font-medium border border-primary/30"
+                className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-primary/15 text-primary text-sm font-medium border border-primary/30 min-w-0"
               >
-                <MarketplaceIcon className="w-4 h-4" />
-                Marketplace
+                <MarketplaceIcon className="w-4 h-4 shrink-0" />
+                <span className="truncate">Marketplace</span>
               </a>
             )}
           </div>
         )}
 
         {project.images.length > 1 && (
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 z-10 mb-12 md:mb-0">
+          <div
+            className={`absolute left-1/2 -translate-x-1/2 flex gap-2 z-10 ${
+              hasMobileBar ? "bottom-[4.75rem] md:bottom-2" : "bottom-2"
+            }`}
+          >
             {project.images.map((_, index) => (
               <button
                 key={index}
@@ -237,31 +256,37 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
         </p>
 
         {project.moat && (
-          <div className="flex flex-wrap gap-2">
-            <p className="w-full text-xs font-medium text-muted-foreground">
+          <div className="flex flex-col gap-2">
+            <p className="text-xs font-medium text-muted-foreground">
               {project.moat}
             </p>
-            {hasNpm && (
-              <a
-                href={project.npm}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-[#cb3837]/30 bg-[#cb3837]/10 px-3 py-2 text-xs font-medium text-[#ff8a8a] transition-colors hover:bg-[#cb3837]/20"
-              >
-                <NpmIcon className="h-4 w-4 shrink-0" />
-                npm package
-              </a>
-            )}
-            {hasMarketplace && (
-              <a
-                href={project.marketplace}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-primary/30 bg-primary/10 px-3 py-2 text-xs font-medium text-primary transition-colors hover:bg-primary/20"
-              >
-                <MarketplaceIcon className="h-4 w-4 shrink-0" />
-                GitHub Marketplace
-              </a>
+            {showMoatLinks && (
+              <div className="flex flex-col sm:flex-row gap-2">
+                {hasNpm && (
+                  <a
+                    href={project.npm}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#cb3837]/30 bg-[#cb3837]/10 px-3 py-2.5 text-xs font-medium text-[#ff8a8a] transition-colors hover:bg-[#cb3837]/20 sm:flex-1"
+                  >
+                    <NpmIcon className="h-4 w-4 shrink-0" />
+                    npm package
+                    <ArrowUpRight className="h-3.5 w-3.5 shrink-0 opacity-80" />
+                  </a>
+                )}
+                {hasMarketplace && (
+                  <a
+                    href={project.marketplace}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg border border-primary/30 bg-primary/10 px-3 py-2.5 text-xs font-medium text-primary transition-colors hover:bg-primary/20 sm:flex-1"
+                  >
+                    <MarketplaceIcon className="h-4 w-4 shrink-0" />
+                    GitHub Marketplace
+                    <ArrowUpRight className="h-3.5 w-3.5 shrink-0 opacity-80" />
+                  </a>
+                )}
+              </div>
             )}
           </div>
         )}
