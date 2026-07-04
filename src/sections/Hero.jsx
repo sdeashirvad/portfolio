@@ -1,6 +1,7 @@
 import { Button } from "@/components/Button";
 import {
   ArrowRight,
+  ArrowUpRight,
   ChevronDown,
   Github,
   Linkedin,
@@ -9,6 +10,8 @@ import {
   Newspaper,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
+
+const LABS_URL = "https://labs.sdeashirvad.com/";
 
 const skills = [
   "Java",
@@ -136,14 +139,13 @@ export const Hero = () => {
                 Let's Talk <ArrowRight className="w-5 h-5" />
               </Button>
               <Button
-                href="https://www.linkedin.com/in/sdeashirvad/"
+                href={LABS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 size="lg"
                 className="bg-secondary text-foreground hover:bg-secondary/80 shadow-none"
               >
-                <Linkedin className="w-5 h-5" />
-                Connect on LinkedIn
+                Studio <ArrowUpRight className="w-5 h-5" />
               </Button>
               <AnimatedBorderButton
                 onClick={handleDownloadCV}

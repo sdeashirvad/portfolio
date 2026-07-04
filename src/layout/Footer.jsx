@@ -6,6 +6,8 @@ import {
   Code2,
 } from "lucide-react";
 
+const LABS_URL = "https://labs.sdeashirvad.com/";
+
 const socialLinks = [
   {
     icon: Github,
@@ -64,7 +66,18 @@ export const Footer = () => {
             </a>
 
             <p className="text-sm text-muted-foreground mt-2">
-                © {currentYear} SDEAshirvad Labs
+              © {currentYear} Ashirvad Kumar Pandey
+            </p>
+            <p className="text-sm text-muted-foreground mt-1">
+              Built and maintained by{" "}
+              <a
+                href={LABS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-foreground transition-colors"
+              >
+                SDEAshirvad Labs →
+              </a>
             </p>
             <p className="text-xs text-muted-foreground/80 mt-2 max-w-sm">
               Building reliable software for developers, enterprise workflows, and AI-powered operations.
