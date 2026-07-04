@@ -27,6 +27,19 @@ function MarketplaceIcon({ className }) {
   );
 }
 
+function PlayStoreIcon({ className }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M3.609 1.814 13.792 12 3.61 22.186a1.006 1.006 0 0 1-.61-.92V2.734a1.006 1.006 0 0 1 .609-.92zm10.89 10.893 2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198 2.807 1.626a1.002 1.002 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658 16.8 8.99l-2.302 2.302-8.634-8.634z" />
+    </svg>
+  );
+}
+
 export const ProjectCard = ({ project, idx, variant = "compact" }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -46,15 +59,18 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
   const hasGithub = project.github && project.github !== "#";
   const hasNpm = project.npm && project.npm !== "#";
   const hasMarketplace = project.marketplace && project.marketplace !== "#";
+  const hasPlayStore = project.playStore && project.playStore !== "#";
 
   const showMoatLinks = Boolean(project.moat && (hasNpm || hasMarketplace));
   const showNpmInMobileBar = hasNpm && !showMoatLinks;
   const showMarketplaceInMobileBar = hasMarketplace && !showMoatLinks;
+  const showPlayStoreInMobileBar = hasPlayStore;
   const mobileBarLinkCount = [
     hasLink,
     hasGithub,
     showNpmInMobileBar,
     showMarketplaceInMobileBar,
+    showPlayStoreInMobileBar,
   ].filter(Boolean).length;
   const hasMobileBar = mobileBarLinkCount > 0;
 
@@ -75,7 +91,7 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
           </div>
         )}
 
-        {(hasNpm || hasMarketplace) && (
+        {(hasNpm || hasMarketplace || hasPlayStore) && (
           <div className="absolute top-3 right-3 z-10 hidden md:flex gap-2">
             {hasNpm && (
               <a
@@ -97,6 +113,17 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
               >
                 <MarketplaceIcon className="h-3.5 w-3.5" />
                 Marketplace
+              </a>
+            )}
+            {hasPlayStore && (
+              <a
+                href={project.playStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-500/15 px-3 py-1.5 text-xs font-semibold text-emerald-400 backdrop-blur-sm transition-colors hover:bg-emerald-500/25"
+              >
+                <PlayStoreIcon className="h-3.5 w-3.5" />
+                Google Play
               </a>
             )}
           </div>
@@ -164,6 +191,18 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
               <MarketplaceIcon className="w-5 h-5" />
             </a>
           )}
+
+          {hasPlayStore && (
+            <a
+              href={project.playStore}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${project.title} on Google Play`}
+              className="p-3 rounded-full glass hover:bg-emerald-500 hover:text-white transition-all text-emerald-400"
+            >
+              <PlayStoreIcon className="w-5 h-5" />
+            </a>
+          )}
         </div>
 
         {hasMobileBar && (
@@ -214,6 +253,17 @@ export const ProjectCard = ({ project, idx, variant = "compact" }) => {
               >
                 <MarketplaceIcon className="w-4 h-4 shrink-0" />
                 <span className="truncate">Marketplace</span>
+              </a>
+            )}
+            {showPlayStoreInMobileBar && (
+              <a
+                href={project.playStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-emerald-500/15 text-emerald-400 text-sm font-medium border border-emerald-500/30 min-w-0"
+              >
+                <PlayStoreIcon className="w-4 h-4 shrink-0" />
+                <span className="truncate">Google Play</span>
               </a>
             )}
           </div>

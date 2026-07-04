@@ -69,7 +69,7 @@ export const projects = [
   {
     title: "Bloom — Quiet Pregnancy Companion",
     description:
-      "Offline-first pregnancy companion — local journaling, milestones, memory export.",
+      "Offline-first pregnancy companion — local journaling, milestones, memory export. Live on Google Play.",
     images: [
       "/projects/bloom-1.png",
       "/projects/bloom-2.png",
@@ -77,12 +77,14 @@ export const projects = [
     ],
     tags: ["React Native", "Android", "Offline-First", "Mobile", "Product Design"],
     link: "https://bloom.sdeashirvad.com",
+    playStore: "https://play.google.com/store/apps/details?id=com.sdeashirvad.bloom",
     github: null,
     sourcePrivate: true,
-    sourceNote: "Proprietary product — source private ahead of Play Store release.",
+    sourceNote: "Live on Google Play — proprietary source, private repository.",
     featured: true,
     highlights: {
       metrics: [
+        "Live on Google Play (Android)",
         "Week-by-week guidance with mood check-ins and milestone memories",
         "100% on-device storage — no account or internet required",
       ],
