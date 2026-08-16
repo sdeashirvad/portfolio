@@ -61,7 +61,7 @@ export const About = () => {
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                With 2+ years building production enterprise systems, I focus on backend
+                With 2.5+ years building production enterprise systems, I focus on backend
                 architecture and data engineering — resilient distributed services beyond
                 basic API wrappers.
               </p>
